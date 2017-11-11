@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         starred2.setOrientation(LinearLayout.HORIZONTAL);
         ArrayList<Llibre> llibresStarred = ctrlPresentacio.obtenirLlegitsLlibres();
         for(int i=0; i<llibresStarred.size(); ++i){
-            File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
+            File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/exemple.jpg");
             if(fitxer.exists()){
                 Bitmap imgBitmap = BitmapFactory.decodeFile(fitxer.getAbsolutePath());
                 ImageButton actual = new ImageButton(this);
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         starred2.setOrientation(LinearLayout.HORIZONTAL);
         llibresStarred = ctrlPresentacio.obtenirLlegidesRevistes();
         for(int i=0; i<llibresStarred.size(); ++i){
-            File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
+            File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/exemple.jpg");
             if(fitxer.exists()){
                 Bitmap imgBitmap = BitmapFactory.decodeFile(fitxer.getAbsolutePath());
                 ImageButton actual = new ImageButton(this);
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         starred2.setOrientation(LinearLayout.HORIZONTAL);
         llibresStarred = ctrlPresentacio.obtenirÚltimsLlibres();
         for(int i=0; i<llibresStarred.size(); ++i){
-            File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
+            File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/exemple.jpg");
             if(fitxer.exists()){
                 Bitmap imgBitmap = BitmapFactory.decodeFile(fitxer.getAbsolutePath());
                 ImageButton actual = new ImageButton(this);
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         starred2.setOrientation(LinearLayout.HORIZONTAL);
         llibresStarred = ctrlPresentacio.obtenirÚltimesRevistes();
         for(int i=0; i<llibresStarred.size(); ++i){
-            File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
+            File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/exemple.jpg");
             if(fitxer.exists()){
                 Bitmap imgBitmap = BitmapFactory.decodeFile(fitxer.getAbsolutePath());
                 ImageButton actual = new ImageButton(this);
