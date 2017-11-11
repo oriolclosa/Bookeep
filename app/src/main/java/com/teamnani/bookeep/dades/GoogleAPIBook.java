@@ -9,15 +9,22 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class GoogleAPIBook {
+public class GoogleAPIBook extends AsyncTask<String, Void, String> {
     private ArrayList<ArrayList<String>> books;
 
     public GoogleAPIBook(){
         books = new ArrayList<>();
     }
 
-    protected void execute(String...strings) {
-        String s = NetworkUtils.getBookInfo(strings[0]);
+    @Override
+    protected String doInBackground(String...strings){
+        //System.out.println(NetworkUtils.getBookInfo(strings[0]));
+        return NetworkUtils.getBookInfo(strings[0]);
+    }
+
+    @Override
+    protected void onPostExecute(String s) {
+        super.onPostExecute(s);
         try{
             JSONObject jsonObject = new JSONObject(s);
             if(jsonObject.has("items")) {
