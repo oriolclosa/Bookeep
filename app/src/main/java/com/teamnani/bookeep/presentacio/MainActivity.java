@@ -26,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
         starred2.setOrientation(LinearLayout.HORIZONTAL);
         ArrayList<Llibre> llibresStarred = ctrlPresentacio.obtenirNous();
         for(int i=0; i<llibresStarred.size(); ++i){
-            ImageView portada = llibresStarred.get(i).portada;
-            starred2.addView(portada);
+            starred2.addView(llibresStarred.get(i).obtenirPortada());
         }
         starred.addView(starred2);
     }
