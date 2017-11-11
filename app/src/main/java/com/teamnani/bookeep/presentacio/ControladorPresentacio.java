@@ -1,6 +1,7 @@
 package com.teamnani.bookeep.presentacio;
 
 import com.teamnani.bookeep.domini.ControladorDomini;
+import com.teamnani.bookeep.domini.Llibre;
 
 import java.util.ArrayList;
 

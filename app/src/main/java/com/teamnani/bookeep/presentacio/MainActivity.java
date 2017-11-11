@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bookeep.teamnani.bookeep.R;
+import com.teamnani.bookeep.domini.Llibre;
 
 import java.util.ArrayList;
 

@@ -13,6 +13,6 @@ public class ControladorDomini {
 
     public ControladorDomini(ControladorPresentacio pCtrlPresentacio){
         ctrlPresentacio = pCtrlPresentacio;
-        ctrlDades = new ControladorDades(this);
+        ctrlDades = new ControladorDades();
     }
 }

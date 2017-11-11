@@ -7,9 +7,7 @@ import com.teamnani.bookeep.domini.ControladorDomini;
  */
 
 public class ControladorDades {
-    private ControladorDomini ctrlDomini;
 
-    public ControladorDades(ControladorDomini pControladorDomini){
-        ctrlDomini = pControladorDomini;
+    public ControladorDades(){
     }
 }
