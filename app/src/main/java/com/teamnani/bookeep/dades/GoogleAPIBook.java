@@ -31,7 +31,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                 JSONArray itemsArray = jsonObject.getJSONArray("items");
                 System.out.println(itemsArray.length());
 
-                for (int i = 0; i < itemsArray.length()-1; i++) {
+                for (int i = 0; i < itemsArray.length(); i++) {
                     JSONObject book = itemsArray.getJSONObject(i);
                     String title = null;
                     String authors = null;
@@ -75,9 +75,12 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                     System.out.println(books.size());
                 }
             }
+            System.out.println("HIIIIIIIIIIIIE");
 
         }catch (Exception e){
+            System.out.println("HIIOOOLLLLLO");
         }
+        System.out.println("HIIOOOOOOOOOOO");
     }
 
     public ArrayList<ArrayList<String>> obtenirBooks(){

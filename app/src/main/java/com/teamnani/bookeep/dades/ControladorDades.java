@@ -21,6 +21,7 @@ public class ControladorDades {
         api.execute(s);
         System.out.println("HEM EXEC");
         ArrayList<ArrayList<String>> books = api.obtenirBooks();
+        System.out.println("dieeeeee");
         /*for (int i = 0; i < books.size(); ++i){
             System.out.println(i);
             for (int j = 0; j < books.get(i).size(); ++j){
