@@ -3,23 +3,31 @@ package com.teamnani.bookeep.presentacio;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bookeep.teamnani.bookeep.R;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private ControladorPresentacio ctrlPresentacio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ctrlPresentacio = new ControladorPresentacio();
         setContentView(R.layout.activity_main);
         LinearLayout starred = (LinearLayout) findViewById(R.id.starredLayout);
         LinearLayout starred2 = new LinearLayout(this);
         starred2.setOrientation(LinearLayout.HORIZONTAL);
-        TextView prova = new TextView(this);
-        prova.setText("Prova");
-        starred2.addView(prova);
+        ArrayList<Llibre> llibresStarred = ctrlPresentacio.obtenirNous();
+        for(int i=0; i<llibresStarred.size(); ++i){
+            ImageView portada = llibresStarred.get(i).portada;
+            starred2.addView(portada);
+        }
         starred.addView(starred2);
     }
 }
