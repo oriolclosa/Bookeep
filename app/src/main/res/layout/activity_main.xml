@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="20dp"
+            android:paddingBottom="10dp"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
             android:paddingTop="20dp">
@@ -34,11 +34,10 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Starred"
+                android:text="Books"
                 android:textSize="18sp"
                 tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="48dp" />
+                tools:layout_editor_absoluteY="16dp" />
 
         </LinearLayout>
 
@@ -46,8 +45,44 @@
             android:id="@+id/scrollStarred"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
             android:paddingLeft="0dp"
-            android:paddingTop="5dp"
+            android:paddingRight="0dp"
+            android:paddingTop="0dp"
+            android:scrollbars="none"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="91dp">
+
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Magazines"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/scrollStarredMag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingTop="0dp"
             android:scrollbars="none"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="91dp">
