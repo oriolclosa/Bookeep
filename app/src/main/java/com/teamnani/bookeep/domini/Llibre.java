@@ -11,14 +11,14 @@ import java.util.ArrayList;
 
 public class Llibre {
     private String titol;
-    private  String autor;
-    private int any;
+    private String autor;
+    private String any;
     private String editorial;
     private String portada;
     private float puntuacio;
     private int comentaris;
 
-    public Llibre(String t, String aut, int a, String e, String p, float pun, int com) {
+    public Llibre(String t, String aut, String a, String e, String p, float pun, int com) {
         this.titol = t;
         this.autor = aut;
         this.any = a;
@@ -36,7 +36,7 @@ public class Llibre {
         return this.autor;
     }
 
-    public int obtenirAny() {
+    public String obtenirAny() {
         return this.any;
     }
 
