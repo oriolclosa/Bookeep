@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ctrlPresentacio = new ControladorPresentacio();
         setContentView(R.layout.activity_main);
 
+        setTitle("Daily recomendations");
+
         tots = new ArrayList<>();
 
         //Llibres starreds
@@ -148,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         starred = (HorizontalScrollView) findViewById(R.id.scrollLatestMag);
         starred2 = new LinearLayout(this);
         starred2.setOrientation(LinearLayout.HORIZONTAL);
-        llibresStarred = ctrlPresentacio.obtenirNous();
+        llibresStarred = ctrlPresentacio.obtenirÚltimesRevistes();
         for(int i=0; i<llibresStarred.size(); ++i){
             File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
             if(fitxer.exists()){
