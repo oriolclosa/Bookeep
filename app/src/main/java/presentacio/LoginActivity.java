@@ -1,4 +1,4 @@
-package com.bookeep.teamnani.bookeep.presentacio;
+package presentacio;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
