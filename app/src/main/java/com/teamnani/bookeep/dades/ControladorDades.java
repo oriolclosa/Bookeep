@@ -5,6 +5,7 @@ import com.teamnani.bookeep.domini.ControladorDomini;
 import java.sql.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by oriolclosa on 11/11/17.
@@ -17,7 +18,13 @@ public class ControladorDades {
 
     public ArrayList<ArrayList<String>> obtenirLlibresMesLlegitsAPI(String s){
         GoogleAPIBook api = new GoogleAPIBook();
-        api.execute(s);
+        try {
+            api.execute(s).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
         ArrayList<ArrayList<String>> books = api.obtenirBooks();
         System.out.println("dieeeeee");
         /*for (int i = 0; i < books.size(); ++i){

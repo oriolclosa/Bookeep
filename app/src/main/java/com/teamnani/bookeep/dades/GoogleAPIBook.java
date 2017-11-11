@@ -19,12 +19,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String...strings){
         //System.out.println(NetworkUtils.getBookInfo(strings[0]));
-        return NetworkUtils.getBookInfo(strings[0]);
-    }
-
-    @Override
-    protected void onPostExecute(String s) {
-        super.onPostExecute(s);
+        String s = NetworkUtils.getBookInfo(strings[0]);
         try{
             JSONObject jsonObject = new JSONObject(s);
             if(jsonObject.has("items")) {
@@ -81,6 +76,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
             System.out.println("HIIOOOLLLLLO");
         }
         System.out.println("HIIOOOOOOOOOOO");
+        return s;
     }
 
     public ArrayList<ArrayList<String>> obtenirBooks(){
