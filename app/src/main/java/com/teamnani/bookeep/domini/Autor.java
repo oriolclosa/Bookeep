@@ -16,4 +16,16 @@ public class Autor {
         this.comentaris = com;
         this.puntuacio = pun;
     }
+
+    public String obtenirNom() {
+        return this.nom;
+    }
+
+    public float obtenirPuntuacio() {
+        return this.puntuacio;
+    }
+
+    public  int obtenirComentaris() {
+        return this.comentaris;
+    }
 }

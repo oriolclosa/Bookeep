@@ -22,4 +22,28 @@ public class Usuari {
         this.imatge = i;
         this.llibresLlegits = ll;
     }
+
+    public String obtenirNom() {
+        return this.nom;
+    }
+
+    public String obtenirNick() {
+        return this.nick;
+    }
+
+    public String obtenirContrasenya() {
+        return this.contrasenya;
+    }
+
+    public String obtenirCorreu() {
+        return this.correu;
+    }
+
+    public ImageView obtenirImatge() {
+        return this.imatge;
+    }
+
+    public int obtenirLlibresLlegits() {
+        return this.llibresLlegits;
+    }
 }

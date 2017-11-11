@@ -17,7 +17,19 @@ public class Resenya {
         this.comentari = c;
     }
 
+    public String obtenirNick() {
+        return this.nick;
+    }
+
+    public String obtenirData() {
+        return this.data;
+    }
+
     public float obtenirPuntuacio() {
         return  this.puntuacio;
+    }
+
+    public String obtenirComentari() {
+        return this.comentari;
     }
 }
