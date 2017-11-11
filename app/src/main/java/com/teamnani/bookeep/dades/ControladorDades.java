@@ -17,9 +17,7 @@ public class ControladorDades {
 
     public ArrayList<ArrayList<String>> obtenirLlibresMesLlegitsAPI(String s){
         GoogleAPIBook api = new GoogleAPIBook();
-        System.out.println("ANEM A EXEC");
         api.execute(s);
-        System.out.println("HEM EXEC");
         ArrayList<ArrayList<String>> books = api.obtenirBooks();
         /*for (int i = 0; i < books.size(); ++i){
             System.out.println(i);
