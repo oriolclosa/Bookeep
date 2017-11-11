@@ -42,12 +42,6 @@ public class NetworkUtils {
             urlConnection = (HttpURLConnection) requestURL.openConnection();
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
-            System.out.println("FUNCIONA");
-        }
-        catch(Exception e){}
-        try{
-            System.out.println("FUNCIONA2");
-
             InputStream inputStream = urlConnection.getInputStream();
             StringBuffer buffer = new StringBuffer();
             if (inputStream == null){
