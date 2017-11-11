@@ -12,10 +12,9 @@ import java.util.Arrays;
 public class GoogleAPIBook extends AsyncTask<String, Void, String> {
     private ArrayList<ArrayList<String>> books;
 
-    public GoogleAPIBook (ArrayList<ArrayList<String>> books){
-        this.books = books;
+    public GoogleAPIBook(){
+        books = new ArrayList<>();
     }
-
 
     @Override
     protected String doInBackground(String...strings){
@@ -28,56 +27,62 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
         super.onPostExecute(s);
         try{
             JSONObject jsonObject = new JSONObject(s);
-            JSONArray itemsArray = jsonObject.getJSONArray("items");
+            if(jsonObject.has("items")) {
+                JSONArray itemsArray = jsonObject.getJSONArray("items");
+                System.out.println(itemsArray.length());
 
-            for (int i = 0; i < itemsArray.length(); i++) {
-                JSONObject book = itemsArray.getJSONObject(i);
-                String title = null;
-                String authors = null;
-                String year = null;
-                String publisher = null;
-                String photo = null;
-                JSONObject volumeInfo = book.getJSONObject("volumeInfo");
-                try{
-                    JSONObject imageLink = volumeInfo.getJSONObject("imageLink");
-                    try{
-                        photo = imageLink.getString("smallThumbnail");
-
-                    } catch (Exception e) {
+                for (int i = 0; i < itemsArray.length()-1; i++) {
+                    JSONObject book = itemsArray.getJSONObject(i);
+                    String title = null;
+                    String authors = null;
+                    String year = null;
+                    String publisher = null;
+                    String photo = null;
+                    if (book.has("volumeInfo")) {
+                        JSONObject volumeInfo = book.getJSONObject("volumeInfo");
+                        if (volumeInfo.has("title")) {
+                            title = volumeInfo.getString("title");
+                            System.out.println(title);
+                        }
+                        if (volumeInfo.has("authors")) {
+                            authors = volumeInfo.getString("authors");
+                        }
+                        if (volumeInfo.has("publisherDate")) {
+                            year = volumeInfo.getString("publishedDate");
+                        }
+                        if (volumeInfo.has("publisher")) {
+                            publisher = volumeInfo.getString("publisher");
+                        }
+                        if (volumeInfo.has("imageLinks")) {
+                            JSONObject imageLink = volumeInfo.getJSONObject("imageLinks");
+                            if (volumeInfo.has("smallThumbnail")) {
+                                photo = imageLink.getString("smallThumbnail");
+                            }
+                        }
                     }
-                }catch (Exception e){
-                }
-                try {
-                    title = volumeInfo.getString("title");
-                } catch (Exception e) {
-                }
-                try{
-                    authors = volumeInfo.getString("authors");
-                } catch (Exception e) {
-                }
-                try{
-                    year = volumeInfo.getString("publishedDate");
-                } catch (Exception e) {
-                }
-                try{
-                    publisher = volumeInfo.getString("publisher");
-                } catch (Exception e) {
-                }
+                    System.out.println("Hola2");
 
 
-                /*if (title != null && authors != null) {
-                    mTitleText.setText(title);
-                    mAuthorText.setText(authors);
-                    return;
-                }*/
-                //debuguing
-                ArrayList<String> atributes = new ArrayList<>(Arrays.asList(title, authors, year, publisher, photo));
-                books.add(atributes);
+
+                    /*if (title != null && authors != null) {
+                        mTitleText.setText(title);
+                        mAuthorText.setText(authors);
+                        return;
+                    }*/
+                    //debuguing
+                    ArrayList<String> atributes = new ArrayList<>(Arrays.asList(title, authors, year, publisher, photo));
+                    books.add(atributes);
+                    System.out.println(books.size());
+                }
             }
 
         }catch (Exception e){
-        e.printStackTrace();
         }
+    }
+
+    public ArrayList<ArrayList<String>> obtenirBooks(){
+        System.out.println("OBTINGUT LLIBRES");
+        return books;
     }
 
 }
