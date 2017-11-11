@@ -17,7 +17,7 @@ public class Resenya {
         this.comentari = c;
     }
 
-    public float getPuntuacio() {
+    public float obtenirPuntuacio() {
         return  this.puntuacio;
     }
 }

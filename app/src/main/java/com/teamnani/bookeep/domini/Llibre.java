@@ -26,4 +26,27 @@ public class Llibre {
         this.puntuacio = pun;
     }
 
+    public String obtenirTitol() {
+        return this.titol;
+    }
+
+    public int obtenirAny() {
+        return this.any;
+    }
+
+    public String obtenirEditorial() {
+        return this.editorial;
+    }
+
+    public ImageView obtenirPortada() {
+        return this.portada;
+    }
+
+    public float obtenirPuntuacio() {
+        return this.puntuacio;
+    }
+
+    public int obtenirComentaris() {
+        return this.comentaris;
+    }
 }
