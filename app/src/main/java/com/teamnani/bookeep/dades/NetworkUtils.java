@@ -20,7 +20,7 @@ public class NetworkUtils {
     private static final String QUERY_PARM = "q";
     private static final String MAX_RESULTS = "maxResults";
     private static final String PRINT_TYPE = "printType";
-    private static final String ORDER_BY = "printType";
+    private static final String ORDER_BY = "orderBy";
 
     static String getBookInfo(String queryString, String bomag, String relnew){
         HttpURLConnection urlConnection = null;
