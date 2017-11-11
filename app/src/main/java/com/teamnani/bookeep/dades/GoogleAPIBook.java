@@ -38,7 +38,15 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                 String publisher = null;
                 String photo = null;
                 JSONObject volumeInfo = book.getJSONObject("volumeInfo");
-                JSONObject imageLink = volumeInfo.getJSONObject("imageLink");
+                try{
+                    JSONObject imageLink = volumeInfo.getJSONObject("imageLink");
+                    try{
+                        photo = imageLink.getString("smallThumbnail");
+
+                    } catch (Exception e) {
+                    }
+                }catch (Exception e){
+                }
                 try {
                     title = volumeInfo.getString("title");
                 } catch (Exception e) {
@@ -55,11 +63,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                     publisher = volumeInfo.getString("publisher");
                 } catch (Exception e) {
                 }
-                try{
-                    photo = imageLink.getString("smallThumbnail");
 
-                } catch (Exception e) {
-                }
 
                 /*if (title != null && authors != null) {
                     mTitleText.setText(title);
