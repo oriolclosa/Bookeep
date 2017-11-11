@@ -38,7 +38,7 @@ public class ControladorPresentacio {
     }
 
     public ArrayList<Llibre> obtenirLlegidesRevistes(){
-        return ctrlDomini.obtenirLlibresMesLlegits(topics.get((obtenirDia()-1)));
+        return ctrlDomini.obtenirRevistesMesLlegides(topics.get((obtenirDia()-1)));
     }
 
     public ArrayList<Llibre> obtenirNous(){
