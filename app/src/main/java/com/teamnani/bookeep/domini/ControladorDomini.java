@@ -32,16 +32,16 @@ public class ControladorDomini {
 
     public ArrayList<Llibre> obtenirNous() {
         ArrayList<Llibre> t = new ArrayList<>();
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
         return t;
     }
 
@@ -56,10 +56,10 @@ public class ControladorDomini {
     }
 
     public ArrayList<Llibre> obtenirLlibresMesLlegits(String query) {
-        ArrayList<ArrayList<String> > r = new ArrayList<ArrayList<String> >(); //obtenirLlibresMesLlegitsAPI()
+        ArrayList<ArrayList<String> > r = new ArrayList<>(); //obtenirLlibresMesLlegitsAPI()
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
-            Llibre l = new Llibre(r.get(i).get(0), parseInt(r.get(i).get(1)), r.get(i).get(2), r.get(i).get(3), 0, 0);
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), parseInt(r.get(i).get(2)), r.get(i).get(3), r.get(i).get(4), 0, 0);
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
@@ -67,25 +67,36 @@ public class ControladorDomini {
     }
 
     public ArrayList<Llibre> obtenirRevistesMesLlegides(String query) {
+        ArrayList<ArrayList<String> > r = new ArrayList<ArrayList<String> >(); //obtenirRevistesMesLlegidesAPI()
         ArrayList<Llibre> ll = new ArrayList<>();
+        for (int i = 0; i < r.size(); ++i) {
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), parseInt(r.get(i).get(2)), r.get(i).get(3), r.get(i).get(4), 0, 0);
+            //Faltan funcions per calcular pun i com en funcio del nom del llibre
+            ll.add(l);
+        }
         return ll;
     }
 
     public ArrayList<Llibre> obtenirLlibresMesRecents(String query) {
+        ArrayList<ArrayList<String> > r = new ArrayList<>(); //obtenirLlibresMesRecentsAPI()
         ArrayList<Llibre> ll = new ArrayList<>();
+        for (int i = 0; i < r.size(); ++i) {
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), parseInt(r.get(i).get(2)), r.get(i).get(3), r.get(i).get(4), 0, 0);
+            //Faltan funcions per calcular pun i com en funcio del nom del llibre
+            ll.add(l);
+        }
         return ll;
     }
 
 
     public ArrayList<Llibre> obtenirRevistesMesRecents(String query) {
+        ArrayList<ArrayList<String> > r = new ArrayList<>(); //obtenirRevistesMesRecentsAPI()
         ArrayList<Llibre> ll = new ArrayList<>();
+        for (int i = 0; i < r.size(); ++i) {
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), parseInt(r.get(i).get(2)), r.get(i).get(3), r.get(i).get(4), 0, 0);
+            //Faltan funcions per calcular pun i com en funcio del nom del llibre
+            ll.add(l);
+        }
         return ll;
     }
-
-    //mes llegits
-    //mes recents
-    //revistes mes llegides
-    //revista mes recent
-
-
 }
