@@ -69,17 +69,11 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                     System.out.println(books.size());
                 }
             }
-            System.out.println("HIIIIIIIIIIIIE");
-
-        }catch (Exception e){
-            System.out.println("HIIOOOLLLLLO");
-        }
-        System.out.println("HIIOOOOOOOOOOO");
+        } catch (Exception e) {}
         return s;
     }
 
     public ArrayList<ArrayList<String>> obtenirBooks(){
-        System.out.println("OBTINGUT LLIBRES");
         return books;
     }
 
