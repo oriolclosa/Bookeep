@@ -30,14 +30,15 @@ public class MainActivity extends AppCompatActivity {
         starred2.setOrientation(LinearLayout.HORIZONTAL);
         ArrayList<Llibre> llibresStarred = ctrlPresentacio.obtenirNous();
         for(int i=0; i<llibresStarred.size(); ++i){
-            //llibresStarred.get(i).obtenirPortada();
-            System.out.println(Environment.getExternalStorageDirectory()+"/Download/exemple.jpg");
+            System.out.println(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
             File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/exemple.jpg");
             if(fitxer.exists()){
                 System.out.println("Existeix!");
                 Bitmap imgBitmap = BitmapFactory.decodeFile(fitxer.getAbsolutePath());
                 ImageView actual = new ImageView(this);
                 actual.setImageBitmap(imgBitmap);
+                actual.requestLayout();
+                actual.getLayoutParams().height = 50;
                 starred2.addView(actual);
             }
         }
