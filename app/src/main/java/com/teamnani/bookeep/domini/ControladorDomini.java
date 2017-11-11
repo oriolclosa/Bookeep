@@ -59,6 +59,10 @@ public class ControladorDomini {
         ArrayList<ArrayList<String> > r = new ArrayList<>(); //obtenirLlibresMesLlegitsAPI()
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
+            if (r.get(i).get(1) == null) r.get(i).set(1, "");
+            if (r.get(i).get(2) == null) r.get(i).set(2, "-1");
+            if (r.get(i).get(3) == null) r.get(i).set(3, "");
+            if (r.get(i).get(4) == null) r.get(i).set(4, "");
             Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), parseInt(r.get(i).get(2)), r.get(i).get(3), r.get(i).get(4), 0, 0);
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
@@ -70,6 +74,10 @@ public class ControladorDomini {
         ArrayList<ArrayList<String> > r = new ArrayList<ArrayList<String> >(); //obtenirRevistesMesLlegidesAPI()
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
+            if (r.get(i).get(1) == null) r.get(i).set(1, "");
+            if (r.get(i).get(2) == null) r.get(i).set(2, "-1");
+            if (r.get(i).get(3) == null) r.get(i).set(3, "");
+            if (r.get(i).get(4) == null) r.get(i).set(4, "");
             Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), parseInt(r.get(i).get(2)), r.get(i).get(3), r.get(i).get(4), 0, 0);
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
@@ -81,6 +89,10 @@ public class ControladorDomini {
         ArrayList<ArrayList<String> > r = new ArrayList<>(); //obtenirLlibresMesRecentsAPI()
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
+            if (r.get(i).get(1) == null) r.get(i).set(1, "");
+            if (r.get(i).get(2) == null) r.get(i).set(2, "-1");
+            if (r.get(i).get(3) == null) r.get(i).set(3, "");
+            if (r.get(i).get(4) == null) r.get(i).set(4, "");
             Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), parseInt(r.get(i).get(2)), r.get(i).get(3), r.get(i).get(4), 0, 0);
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
@@ -93,6 +105,10 @@ public class ControladorDomini {
         ArrayList<ArrayList<String> > r = new ArrayList<>(); //obtenirRevistesMesRecentsAPI()
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
+            if (r.get(i).get(1) == null) r.get(i).set(1, "");
+            if (r.get(i).get(2) == null) r.get(i).set(2, "-1");
+            if (r.get(i).get(3) == null) r.get(i).set(3, "");
+            if (r.get(i).get(4) == null) r.get(i).set(4, "");
             Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), parseInt(r.get(i).get(2)), r.get(i).get(3), r.get(i).get(4), 0, 0);
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
