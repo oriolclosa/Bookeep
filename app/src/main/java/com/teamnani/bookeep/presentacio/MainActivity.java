@@ -1,5 +1,8 @@
 package com.teamnani.bookeep.presentacio;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 import com.bookeep.teamnani.bookeep.R;
 import com.teamnani.bookeep.domini.Llibre;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +30,16 @@ public class MainActivity extends AppCompatActivity {
         starred2.setOrientation(LinearLayout.HORIZONTAL);
         ArrayList<Llibre> llibresStarred = ctrlPresentacio.obtenirNous();
         for(int i=0; i<llibresStarred.size(); ++i){
-            starred2.addView(llibresStarred.get(i).obtenirPortada());
+            //llibresStarred.get(i).obtenirPortada();
+            System.out.println(Environment.getExternalStorageDirectory()+"/Download/exemple.jpg");
+            File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/exemple.jpg");
+            if(fitxer.exists()){
+                System.out.println("Existeix!");
+                Bitmap imgBitmap = BitmapFactory.decodeFile(fitxer.getAbsolutePath());
+                ImageView actual = new ImageView(this);
+                actual.setImageBitmap(imgBitmap);
+                starred2.addView(actual);
+            }
         }
         starred.addView(starred2);
     }
