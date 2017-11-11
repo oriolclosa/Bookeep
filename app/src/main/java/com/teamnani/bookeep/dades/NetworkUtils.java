@@ -29,7 +29,7 @@ public class NetworkUtils {
 
             Uri buildUri = Uri.parse(BOOK_BASE_URL).buildUpon()
                     .appendQueryParameter(QUERY_PARM, queryString)
-                    .appendQueryParameter(MAX_RESULTS, "40")
+                    .appendQueryParameter(MAX_RESULTS, "6")
                     .appendQueryParameter(PRINT_TYPE, bomag)
                     .appendQueryParameter(ORDER_BY, relnew)
                     .build();
@@ -42,12 +42,6 @@ public class NetworkUtils {
             urlConnection = (HttpURLConnection) requestURL.openConnection();
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
-            System.out.println("FUNCIONA");
-        }
-        catch(Exception e){}
-        try{
-            System.out.println("FUNCIONA2");
-
             InputStream inputStream = urlConnection.getInputStream();
             StringBuffer buffer = new StringBuffer();
             if (inputStream == null){
