@@ -41,13 +41,24 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                 JSONObject imageLink = volumeInfo.getJSONObject("imageLink");
                 try {
                     title = volumeInfo.getString("title");
+                } catch (Exception e) {
+                }
+                try{
                     authors = volumeInfo.getString("authors");
+                } catch (Exception e) {
+                }
+                try{
                     year = volumeInfo.getString("publishedDate");
+                } catch (Exception e) {
+                }
+                try{
                     publisher = volumeInfo.getString("publisher");
+                } catch (Exception e) {
+                }
+                try{
                     photo = imageLink.getString("smallThumbnail");
 
                 } catch (Exception e) {
-                    e.printStackTrace();
                 }
 
                 /*if (title != null && authors != null) {
