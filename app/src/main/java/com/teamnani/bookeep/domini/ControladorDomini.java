@@ -30,7 +30,7 @@ public class ControladorDomini {
 
     public ArrayList<Llibre> obtenirNous() {
         ArrayList<Llibre> t = new ArrayList<>();
-        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple", (float) 3.2,4));
+        t.add(new Llibre("Aquest es el titol", 1997, "La meva editorial", "exemple.jpg", (float) 3.2,4));
         return t;
     }
 }
