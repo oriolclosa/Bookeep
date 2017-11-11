@@ -13,11 +13,11 @@ public class Llibre {
     private String titol;
     private int any;
     private String editorial;
-    private ImageView portada;
+    private String portada;
     private float puntuacio;
     private int comentaris;
 
-    public Llibre(String t, int a, String e, ImageView p, float pun, int com) {
+    public Llibre(String t, int a, String e, String p, float pun, int com) {
         this.titol = t;
         this.any = a;
         this.editorial = e;
@@ -38,7 +38,7 @@ public class Llibre {
         return this.editorial;
     }
 
-    public ImageView obtenirPortada() {
+    public String obtenirPortada() {
         return this.portada;
     }
 
