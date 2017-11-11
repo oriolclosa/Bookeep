@@ -29,7 +29,7 @@ public class NetworkUtils {
 
             Uri buildUri = Uri.parse(BOOK_BASE_URL).buildUpon()
                     .appendQueryParameter(QUERY_PARM, queryString)
-                    .appendQueryParameter(MAX_RESULTS, "40")
+                    .appendQueryParameter(MAX_RESULTS, "6")
                     .appendQueryParameter(PRINT_TYPE, bomag)
                     .appendQueryParameter(ORDER_BY, relnew)
                     .build();
