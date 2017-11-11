@@ -19,7 +19,7 @@ public class ControladorDades {
     public ArrayList<ArrayList<String>> obtenirLlibresMesLlegitsAPI(String s){
         GoogleAPIBook api = new GoogleAPIBook();
         try {
-            api.execute(s).get();
+            api.execute(s, "books", "relevance").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -37,14 +37,62 @@ public class ControladorDades {
     }
 
     public ArrayList<ArrayList<String>> obtenirRevistesMesLlegidesAPI(String s){
-        return null;
+        GoogleAPIBook api = new GoogleAPIBook();
+        try {
+            api.execute(s, "magazines", "relevance").get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        ArrayList<ArrayList<String>> books = api.obtenirBooks();
+        System.out.println("dieeeeee");
+        /*for (int i = 0; i < books.size(); ++i){
+            System.out.println(i);
+            for (int j = 0; j < books.get(i).size(); ++j){
+                System.out.println(books.get(i).get(j));
+            }
+        }*/
+        return books;
     }
 
     public ArrayList<ArrayList<String>> obtenirLlibresMesRecentsAPI(String s){
-        return null;
+        GoogleAPIBook api = new GoogleAPIBook();
+        try {
+            api.execute(s, "books", "newest").get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        ArrayList<ArrayList<String>> books = api.obtenirBooks();
+        System.out.println("dieeeeee");
+        /*for (int i = 0; i < books.size(); ++i){
+            System.out.println(i);
+            for (int j = 0; j < books.get(i).size(); ++j){
+                System.out.println(books.get(i).get(j));
+            }
+        }*/
+        return books;
     }
 
     public ArrayList<ArrayList<String>> obtenirRevistesMesRecentsAPI(String s){
-        return null;
+        GoogleAPIBook api = new GoogleAPIBook();
+        try {
+            api.execute(s, "magazines", "newest").get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        ArrayList<ArrayList<String>> books = api.obtenirBooks();
+        System.out.println("dieeeeee");
+        /*for (int i = 0; i < books.size(); ++i){
+            System.out.println(i);
+            for (int j = 0; j < books.get(i).size(); ++j){
+                System.out.println(books.get(i).get(j));
+            }
+        }*/
+        return books;
     }
 }

@@ -20,8 +20,9 @@ public class NetworkUtils {
     private static final String QUERY_PARM = "q";
     private static final String MAX_RESULTS = "maxResults";
     private static final String PRINT_TYPE = "printType";
+    private static final String ORDER_BY = "printType";
 
-    static String getBookInfo(String queryString){
+    static String getBookInfo(String queryString, String bomag, String relnew){
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
         String bookJSONString = null;
@@ -29,7 +30,8 @@ public class NetworkUtils {
             Uri buildUri = Uri.parse(BOOK_BASE_URL).buildUpon()
                     .appendQueryParameter(QUERY_PARM, queryString)
                     .appendQueryParameter(MAX_RESULTS, "40")
-                    .appendQueryParameter(PRINT_TYPE, "books")
+                    .appendQueryParameter(PRINT_TYPE, bomag)
+                    .appendQueryParameter(ORDER_BY, relnew)
                     .build();
 
         System.out.println(buildUri.toString());
