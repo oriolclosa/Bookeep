@@ -26,19 +26,19 @@ public class ControladorPresentacio {
     }
 
     public ArrayList<Llibre> obtenirÚltimsLlibres(){
-        return ctrlDomini.AAAA(topics.get((obtenirDia()-1)));
+        return ctrlDomini.obtenirLlibresMesRecents(topics.get((obtenirDia()-1)));
     }
 
     public ArrayList<Llibre> obtenirÚltimesRevistes(){
-        return ctrlDomini.AAAA(topics.get((obtenirDia()-1)));
+        return ctrlDomini.obtenirRevistesMesRecents(topics.get((obtenirDia()-1)));
     }
 
     public ArrayList<Llibre> obtenirLlegitsLlibres(){
-        return ctrlDomini.AAAA(topics.get((obtenirDia()-1)));
+        return ctrlDomini.obtenirLlibresMesLlegits(topics.get((obtenirDia()-1)));
     }
 
     public ArrayList<Llibre> obtenirLlegidesRevistes(){
-        return ctrlDomini.AAAA(topics.get((obtenirDia()-1)));
+        return ctrlDomini.obtenirLlibresMesLlegits(topics.get((obtenirDia()-1)));
     }
 
     public ArrayList<Llibre> obtenirNous(){

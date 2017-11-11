@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         starred = (HorizontalScrollView) findViewById(R.id.scrollStarredMag);
         starred2 = new LinearLayout(this);
         starred2.setOrientation(LinearLayout.HORIZONTAL);
-        llibresStarred = ctrlPresentacio.obtenirÚltimesRevistes();
+        llibresStarred = ctrlPresentacio.obtenirLlegidesRevistes();
         for(int i=0; i<llibresStarred.size(); ++i){
             File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
             if(fitxer.exists()){
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         starred = (HorizontalScrollView) findViewById(R.id.scrollLatest);
         starred2 = new LinearLayout(this);
         starred2.setOrientation(LinearLayout.HORIZONTAL);
-        llibresStarred = ctrlPresentacio.obtenirLlegidesRevistes();
+        llibresStarred = ctrlPresentacio.obtenirÚltimsLlibres();
         for(int i=0; i<llibresStarred.size(); ++i){
             File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
             if(fitxer.exists()){

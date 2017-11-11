@@ -55,7 +55,7 @@ public class ControladorDomini {
         return r;
     }
 
-    public ArrayList<Llibre> obtenirLlibresMesLlegits() {
+    public ArrayList<Llibre> obtenirLlibresMesLlegits(String query) {
         ArrayList<ArrayList<String> > r = new ArrayList<ArrayList<String> >(); //obtenirLlibresMesLlegitsAPI()
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
@@ -63,6 +63,22 @@ public class ControladorDomini {
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
+        return ll;
+    }
+
+    public ArrayList<Llibre> obtenirRevistesMesLlegides(String query) {
+        ArrayList<Llibre> ll = new ArrayList<>();
+        return ll;
+    }
+
+    public ArrayList<Llibre> obtenirLlibresMesRecents(String query) {
+        ArrayList<Llibre> ll = new ArrayList<>();
+        return ll;
+    }
+
+
+    public ArrayList<Llibre> obtenirRevistesMesRecents(String query) {
+        ArrayList<Llibre> ll = new ArrayList<>();
         return ll;
     }
 
