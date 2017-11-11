@@ -7,10 +7,6 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-/**
- * Created by oriolclosa on 11/11/17.
- */
-
 public class ControladorDades {
 
     public ControladorDades(){
@@ -26,7 +22,6 @@ public class ControladorDades {
             e.printStackTrace();
         }
         ArrayList<ArrayList<String>> books = api.obtenirBooks();
-        System.out.println("dieeeeee");
         /*for (int i = 0; i < books.size(); ++i){
             System.out.println(i);
             for (int j = 0; j < books.get(i).size(); ++j){
@@ -46,7 +41,6 @@ public class ControladorDades {
             e.printStackTrace();
         }
         ArrayList<ArrayList<String>> books = api.obtenirBooks();
-        System.out.println("dieeeeee");
         /*for (int i = 0; i < books.size(); ++i){
             System.out.println(i);
             for (int j = 0; j < books.get(i).size(); ++j){
@@ -66,7 +60,6 @@ public class ControladorDades {
             e.printStackTrace();
         }
         ArrayList<ArrayList<String>> books = api.obtenirBooks();
-        System.out.println("dieeeeee");
         /*for (int i = 0; i < books.size(); ++i){
             System.out.println(i);
             for (int j = 0; j < books.get(i).size(); ++j){
@@ -86,7 +79,6 @@ public class ControladorDades {
             e.printStackTrace();
         }
         ArrayList<ArrayList<String>> books = api.obtenirBooks();
-        System.out.println("dieeeeee");
         /*for (int i = 0; i < books.size(); ++i){
             System.out.println(i);
             for (int j = 0; j < books.get(i).size(); ++j){
