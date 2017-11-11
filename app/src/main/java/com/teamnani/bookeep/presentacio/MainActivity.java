@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v){
         Intent llibre = new Intent(this, BookActivity.class);
-        Llibre passar = tots.get(0);
+        Llibre passar = tots.get(v.getId());
         llibre.putExtra("titol", passar.obtenirTitol());
         llibre.putExtra("any", passar.obtenirAny());
         llibre.putExtra("editorial", passar.obtenirEditorial());

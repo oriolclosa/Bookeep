@@ -15,6 +15,7 @@ public class BookActivity extends AppCompatActivity {
 
         Intent llibre = getIntent();
         String titol = llibre.getStringExtra("titol");
+        setTitle(titol);
         System.out.println(titol);
     }
 }
