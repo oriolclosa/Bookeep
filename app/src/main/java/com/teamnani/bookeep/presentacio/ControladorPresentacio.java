@@ -5,6 +5,7 @@ import com.teamnani.bookeep.domini.Llibre;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -17,6 +18,27 @@ public class ControladorPresentacio {
 
     public ControladorPresentacio(){
         ctrlDomini = new ControladorDomini(this);
+    }
+
+    private int obtenirDia(){
+        Calendar cal = Calendar.getInstance();
+        return cal.get(Calendar.DAY_OF_MONTH);
+    }
+
+    public ArrayList<Llibre> obtenirÚltimsLlibres(){
+        return ctrlDomini.AAAA(topics.get((obtenirDia()-1)));
+    }
+
+    public ArrayList<Llibre> obtenirÚltimesRevistes(){
+        return ctrlDomini.AAAA(topics.get((obtenirDia()-1)));
+    }
+
+    public ArrayList<Llibre> obtenirLlegitsLlibres(){
+        return ctrlDomini.AAAA(topics.get((obtenirDia()-1)));
+    }
+
+    public ArrayList<Llibre> obtenirLlegidesRevistes(){
+        return ctrlDomini.AAAA(topics.get((obtenirDia()-1)));
     }
 
     public ArrayList<Llibre> obtenirNous(){

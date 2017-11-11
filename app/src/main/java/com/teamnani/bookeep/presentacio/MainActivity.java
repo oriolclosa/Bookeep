@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         HorizontalScrollView starred = (HorizontalScrollView) findViewById(R.id.scrollStarred);
         LinearLayout starred2 = new LinearLayout(this);
         starred2.setOrientation(LinearLayout.HORIZONTAL);
-        ArrayList<Llibre> llibresStarred = ctrlPresentacio.obtenirNous();
+        ArrayList<Llibre> llibresStarred = ctrlPresentacio.obtenirLlegitsLlibres();
         for(int i=0; i<llibresStarred.size(); ++i){
             File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
             if(fitxer.exists()){
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         starred = (HorizontalScrollView) findViewById(R.id.scrollStarredMag);
         starred2 = new LinearLayout(this);
         starred2.setOrientation(LinearLayout.HORIZONTAL);
-        llibresStarred = ctrlPresentacio.obtenirNous();
+        llibresStarred = ctrlPresentacio.obtenirÚltimesRevistes();
         for(int i=0; i<llibresStarred.size(); ++i){
             File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
             if(fitxer.exists()){
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         starred = (HorizontalScrollView) findViewById(R.id.scrollLatest);
         starred2 = new LinearLayout(this);
         starred2.setOrientation(LinearLayout.HORIZONTAL);
-        llibresStarred = ctrlPresentacio.obtenirNous();
+        llibresStarred = ctrlPresentacio.obtenirLlegidesRevistes();
         for(int i=0; i<llibresStarred.size(); ++i){
             File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
             if(fitxer.exists()){
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         starred = (HorizontalScrollView) findViewById(R.id.scrollLatestMag);
         starred2 = new LinearLayout(this);
         starred2.setOrientation(LinearLayout.HORIZONTAL);
-        llibresStarred = ctrlPresentacio.obtenirNous();
+        llibresStarred = ctrlPresentacio.obtenirÚltimesRevistes();
         for(int i=0; i<llibresStarred.size(); ++i){
             File fitxer = new File(Environment.getExternalStorageDirectory()+"/Download/"+llibresStarred.get(i).obtenirPortada());
             if(fitxer.exists()){
