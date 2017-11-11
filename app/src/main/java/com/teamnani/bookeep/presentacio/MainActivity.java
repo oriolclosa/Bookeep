@@ -190,7 +190,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent llibre = new Intent(this, BookActivity.class);
         Llibre passar = tots.get(v.getId());
         llibre.putExtra("titol", passar.obtenirTitol());
-        llibre.putExtra("any", passar.obtenirAny());
+        llibre.putExtra("autor", passar.obtenirAutor());
+        llibre.putExtra("any", String.valueOf(passar.obtenirAny()));
         llibre.putExtra("editorial", passar.obtenirEditorial());
         llibre.putExtra("portada", passar.obtenirPortada());
         llibre.putExtra("puntuacio", passar.obtenirPuntuacio());
