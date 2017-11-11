@@ -68,7 +68,7 @@ public class ControladorDomini {
     }
 
     public ArrayList<Llibre> obtenirRevistesMesLlegides(String query) {
-        ArrayList<ArrayList<String> > r = new ArrayList<ArrayList<String> >(); //obtenirRevistesMesLlegidesAPI()
+        ArrayList<ArrayList<String> > r = ctrlDades.obtenirRevistesMesLlegidesAPI(query);
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
             if (r.get(i).get(1) == null) r.get(i).set(1, "");
@@ -83,7 +83,7 @@ public class ControladorDomini {
     }
 
     public ArrayList<Llibre> obtenirLlibresMesRecents(String query) {
-        ArrayList<ArrayList<String> > r = new ArrayList<>(); //obtenirLlibresMesRecentsAPI()
+        ArrayList<ArrayList<String> > r = ctrlDades.obtenirLlibresMesRecentsAPI(query);
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
             if (r.get(i).get(1) == null) r.get(i).set(1, "");
@@ -99,7 +99,7 @@ public class ControladorDomini {
 
 
     public ArrayList<Llibre> obtenirRevistesMesRecents(String query) {
-        ArrayList<ArrayList<String> > r = new ArrayList<>(); //obtenirRevistesMesRecentsAPI()
+        ArrayList<ArrayList<String> > r = ctrlDades.obtenirRevistesMesRecentsAPI(query);
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
             if (r.get(i).get(1) == null) r.get(i).set(1, "");
