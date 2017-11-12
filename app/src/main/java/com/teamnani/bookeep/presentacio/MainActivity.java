@@ -11,9 +11,11 @@ import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.bookeep.teamnani.bookeep.R;
@@ -85,6 +87,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setTitle("Daily recomendations");
 
         tots = new ArrayList<>();
+
+        final Switch cerca = (Switch) findViewById(R.id.switchAutor);
+        cerca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                TextView cerca2 = (TextView) findViewById(R.id.textBy);
+                if(cerca.isChecked()){
+                    cerca2.setText("by author");
+                }
+                else{
+                    cerca2.setText("by title");
+                }
+            }
+        });
 
         carregarLlibres(ctrlPresentacio.obtenirLlegitsLlibres(), R.id.scrollStarred);
         carregarLlibres(ctrlPresentacio.obtenirLlegidesRevistes(), R.id.scrollStarredMag);
