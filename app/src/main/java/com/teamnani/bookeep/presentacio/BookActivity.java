@@ -80,9 +80,17 @@ public class BookActivity extends AppCompatActivity {
         llibISBN.setText(llibre.getStringExtra("ISBN"));
 
         TextView llibProg = (TextView) findViewById(R.id.progressText);
-        llibProg.setText("7.56");
+        llibProg.setText(llibre.getStringExtra("puntuacio"));
 
         ProgressBar llibProg2 = (ProgressBar) findViewById(R.id.progressBar);
-        llibProg2.setProgress(76);
+        llibProg2.setProgress((int) Float.parseFloat(llibre.getStringExtra("puntuacio")));
+
+        TextView llibText = (TextView) findViewById(R.id.textText);
+        String text = llibre.getStringExtra("text");
+        if(text.length()>250){
+            text = text.substring(0, 250);
+            text += "...";
+        }
+        llibText.setText(text);
     }
 }

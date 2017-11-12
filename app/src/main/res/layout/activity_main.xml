@@ -20,240 +20,248 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="0dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Search"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <TextView
+                        android:id="@+id/textBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="by title"
+                        android:textAlignment="textEnd"
+                        android:textSize="12sp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <Switch
+                        android:id="@+id/switchAutor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:padding="0dp" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="Title"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/buttonCercar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:text="SUBMIT" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contingut"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
-                    android:paddingTop="20dp">
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:paddingTop="20dp">
 
                         <TextView
-                            android:id="@+id/textSearch"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Search"
+                            android:text="Starred publications"
                             android:textSize="24sp"
                             android:textStyle="bold"
                             tools:layout_editor_absoluteX="16dp"
                             tools:layout_editor_absoluteY="16dp" />
 
                         <TextView
-                            android:id="@+id/textBy"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="by title"
-                            android:textAlignment="textEnd"
-                            android:textSize="12sp"
+                            android:text="Books"
+                            android:textSize="18sp"
                             tools:layout_editor_absoluteX="16dp"
                             tools:layout_editor_absoluteY="16dp" />
 
-                        <Switch
-                            android:id="@+id/switchAutor"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right|center_vertical"
-                            android:layout_margin="0dp"
-                            android:layout_weight="1"
-                            android:padding="0dp" />
                     </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/editText"
+                    <HorizontalScrollView
+                        android:id="@+id/scrollStarred"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="0dp"
-                        android:layout_marginRight="0dp"
-                        android:layout_marginTop="0dp"
-                        android:ems="10"
-                        android:hint="Title"
-                        android:inputType="textPersonName" />
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:paddingTop="0dp"
+                        android:scrollbars="none"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="91dp">
 
-                    <Button
-                        android:id="@+id/button2"
+                    </HorizontalScrollView>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
                         android:paddingLeft="25dp"
                         android:paddingRight="25dp"
-                        android:text="SUBMIT" />
+                        android:paddingTop="15dp">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Magazines"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="16dp" />
+
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:id="@+id/scrollStarredMag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:paddingTop="0dp"
+                        android:scrollbars="none"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="91dp">
+
+                    </HorizontalScrollView>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
-                    android:paddingTop="20dp">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/textView"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Starred publications"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp" />
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:paddingTop="30dp">
 
-                    <TextView
-                        android:id="@+id/textView2"
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Latest publications"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="16dp" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Books"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="16dp" />
+
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:id="@+id/scrollLatest"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Books"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp" />
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:paddingTop="0dp"
+                        android:scrollbars="none"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="91dp">
+
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:paddingTop="15dp">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Magazines"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="16dp" />
+
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:id="@+id/scrollLatestMag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="20dp"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:paddingTop="0dp"
+                        android:scrollbars="none"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="91dp">
+
+                    </HorizontalScrollView>
 
                 </LinearLayout>
-
-                <HorizontalScrollView
-                    android:id="@+id/scrollStarred"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
-                    android:paddingTop="0dp"
-                    android:scrollbars="none"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="91dp">
-
-                </HorizontalScrollView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
-                    android:paddingTop="15dp">
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Magazines"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp" />
-
-                </LinearLayout>
-
-                <HorizontalScrollView
-                    android:id="@+id/scrollStarredMag"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
-                    android:paddingTop="0dp"
-                    android:scrollbars="none"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="91dp">
-
-                </HorizontalScrollView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
-                    android:paddingTop="30dp">
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Latest publications"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp" />
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Books"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp" />
-
-                </LinearLayout>
-
-                <HorizontalScrollView
-                    android:id="@+id/scrollLatest"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="0dp"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
-                    android:paddingTop="0dp"
-                    android:scrollbars="none"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="91dp">
-
-                </HorizontalScrollView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="25dp"
-                    android:paddingRight="25dp"
-                    android:paddingTop="15dp">
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Magazines"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp" />
-
-                </LinearLayout>
-
-                <HorizontalScrollView
-                    android:id="@+id/scrollLatestMag"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="20dp"
-                    android:paddingLeft="0dp"
-                    android:paddingRight="0dp"
-                    android:paddingTop="0dp"
-                    android:scrollbars="none"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="91dp">
-
-                </HorizontalScrollView>
 
             </LinearLayout>
 
