@@ -29,16 +29,16 @@ public class ControladorDomini {
 
     public ArrayList<Llibre> obtenirNous() {
         ArrayList<Llibre> t = new ArrayList<>();
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1"));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
+        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
         return t;
     }
 
@@ -61,7 +61,7 @@ public class ControladorDomini {
             if (r.get(i).get(2) == null) r.get(i).set(2, "");
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
-            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), 0, 0, r.get(i).get(5));
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), 0, 0, r.get(i).get(5), r.get(i).get(6));
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
@@ -76,7 +76,7 @@ public class ControladorDomini {
             if (r.get(i).get(2) == null) r.get(i).set(2, "");
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
-            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), 0, 0, r.get(i).get(5));
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), 0, 0, r.get(i).get(5), r.get(i).get(6));
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
@@ -91,7 +91,7 @@ public class ControladorDomini {
             if (r.get(i).get(2) == null) r.get(i).set(2, "");
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
-            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), 0, 0, r.get(i).get(5));
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), 0, 0, r.get(i).get(5), r.get(i).get(6));
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
@@ -107,7 +107,7 @@ public class ControladorDomini {
             if (r.get(i).get(2) == null) r.get(i).set(2, "");
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
-            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), 0, 0, r.get(i).get(5));
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), 0, 0, r.get(i).get(5), r.get(i).get(6));
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
