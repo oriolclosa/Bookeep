@@ -70,6 +70,9 @@ public class BookActivity extends AppCompatActivity {
         actual.setBackground(null);
         actual.setPadding(0, 0, 0, 0);
 
+        TextView llibISBN = (TextView) findViewById(R.id.isbnText);
+        llibISBN.setText(llibre.getStringExtra("ISBN"));
+
         TextView llibProg = (TextView) findViewById(R.id.progressText);
         llibProg.setText("7.56");
 

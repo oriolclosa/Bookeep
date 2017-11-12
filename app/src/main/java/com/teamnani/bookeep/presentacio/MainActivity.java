@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         llibre.putExtra("portada", passar.obtenirPortada());
         llibre.putExtra("puntuacio", passar.obtenirPuntuacio());
         llibre.putExtra("comentaris", passar.obtenirComentaris());
+        llibre.putExtra("ISBN", passar.obtenirISBN());
         startActivity(llibre);
     }
 }
