@@ -1,10 +1,6 @@
 package com.teamnani.bookeep.dades;
 
-import com.teamnani.bookeep.domini.ControladorDomini;
-
 import java.io.File;
-import java.sql.Array;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -111,8 +107,13 @@ public class ControladorDades {
     }
 
     private void createFiles(){
-        File fileAutors = new File("\\dades\\autors.txt");
-        File fileLlibres = new File("\\dade\\llibres.txt");
+        File folder = new File("/dades");
+        if(!folder.exists()){
+            folder.mkdir();
+        }
+        File fileAutors = new File("/dades/autors.txt");
+        File fileLlibres = new File("/dades/llibres.txt");
+
     }
 
 

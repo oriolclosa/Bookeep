@@ -1,7 +1,6 @@
 package com.teamnani.bookeep.dades;
 
 import android.os.AsyncTask;
-import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -33,6 +32,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                     String year = null;
                     String publisher = null;
                     String photo = null;
+                    String ISBN = null;
                     if (book.has("volumeInfo")) {
                         JSONObject volumeInfo = book.getJSONObject("volumeInfo");
                         if (volumeInfo.has("title")) {
@@ -54,6 +54,9 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                                 photo = imageLink.getString("smallThumbnail");
                             }
                         }
+                        if (volumeInfo.has("ISBN_13")){
+                            ISBN = volumeInfo.getString("ISBN_13");
+                        }
                     }
 
 
@@ -64,7 +67,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                         return;
                     }*/
                     //debuguing
-                    ArrayList<String> atributes = new ArrayList<>(Arrays.asList(title, authors, year, publisher, photo));
+                    ArrayList<String> atributes = new ArrayList<>(Arrays.asList(title, authors, year, publisher, photo,ISBN));
                     books.add(atributes);
                     System.out.println(books.size());
                 }
