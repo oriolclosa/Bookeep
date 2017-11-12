@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -19,6 +22,7 @@ import com.bookeep.teamnani.bookeep.R;
 import com.teamnani.bookeep.domini.Llibre;
 
 import java.lang.reflect.Array;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,10 +30,23 @@ import java.util.concurrent.ExecutionException;
 
 public class BookActivity extends AppCompatActivity {
 
+    private ControladorPresentacio ctrlPresentacio;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
+
+        ctrlPresentacio = ControladorPresentacio.getInstance();
+
+        Button afegir = (Button) findViewById(R.id.commentButton);
+        afegir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ctrlPresentacio.ferComentari(getTitle().toString(), "joe", (new Timestamp(System.currentTimeMillis())).toString(), ((RatingBar) findViewById(R.id.ratingText)).getRating(), ((EditText) findViewById(R.id.comentariText)).toString());
+            }
+        });
+
 
         Intent llibre = getIntent();
 
@@ -38,8 +55,8 @@ public class BookActivity extends AppCompatActivity {
         TextView llibAutor = (TextView) findViewById(R.id.autorText);
         String autors = llibre.getStringExtra("autor");
         if(autors.length()>4) {
-            autors = autors.substring(2, autors.length()-2);
-            List<String> autors2 = new ArrayList<String>(Arrays.asList(autors.split(",")));
+            autors = autors.substring(2, autors.length()-1);
+            List<String> autors2 = new ArrayList<String>(Arrays.asList(autors.split("\",\"")));
             autors = "";
             for(int i=0; i<autors2.size(); ++i){
                 autors += ", " + autors2.get(i);
@@ -99,7 +116,7 @@ public class BookActivity extends AppCompatActivity {
         llibProg2.setProgress((int) Float.parseFloat(llibre.getStringExtra("puntuacio")));
 
         TextView llibText = (TextView) findViewById(R.id.textText);
-        String text = llibre.getStringExtra("text");
+        String text = llibre.getStringExtra("descripcio");
         if(text.length()>250){
             text = text.substring(0, 250);
             text += "...";
