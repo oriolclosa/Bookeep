@@ -42,7 +42,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                         if (volumeInfo.has("authors")) {
                             authors = volumeInfo.getString("authors");
                         }
-                        if (volumeInfo.has("publisherDate")) {
+                        if (volumeInfo.has("publishedDate")) {
                             year = volumeInfo.getString("publishedDate");
                         }
                         if (volumeInfo.has("publisher")) {
@@ -55,7 +55,9 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                             }
                         }
                         if (volumeInfo.has("ISBN_13")){
-                            ISBN = volumeInfo.getString("ISBN_13");
+                            JSONObject industryIdentifiers = volumeInfo.getJSONObject("ISBN_13");
+                            if (industryIdentifiers.has("ISBN_13"))
+                                ISBN = volumeInfo.getString("ISBN_13");
                         }
                     }
 
