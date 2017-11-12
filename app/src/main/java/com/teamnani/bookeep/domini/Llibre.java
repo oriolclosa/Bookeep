@@ -18,8 +18,9 @@ public class Llibre {
     private float puntuacio;
     private int comentaris;
     private String ISBN;
+    private String text;
 
-    public Llibre(String t, String aut, String a, String e, String p, float pun, int com, String I) {
+    public Llibre(String t, String aut, String a, String e, String p, float pun, int com, String I, String txt) {
         this.titol = t;
         this.autor = aut;
         this.any = a;
@@ -28,6 +29,7 @@ public class Llibre {
         this.comentaris = com;
         this.puntuacio = pun;
         this.ISBN = I;
+        this.text = txt;
     }
 
     public String obtenirTitol() {
@@ -60,5 +62,9 @@ public class Llibre {
 
     public String obtenirISBN() {
         return this.ISBN;
+    }
+
+    public String obtenirText() {
+        return this.text;
     }
 }
