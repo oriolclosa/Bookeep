@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ctrlPresentacio = new ControladorPresentacio();
         setContentView(R.layout.activity_main);
 
-        setTitle("");
+        setTitle("Bookeep");
 
         tots = new ArrayList<>();
 
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         llibre.putExtra("any", passar.obtenirAny());
         llibre.putExtra("editorial", passar.obtenirEditorial());
         llibre.putExtra("portada", passar.obtenirPortada());
-        llibre.putExtra("puntuacio", passar.obtenirPuntuacio());
+        llibre.putExtra("puntuacio", String.valueOf(passar.obtenirPuntuacio()));
         llibre.putExtra("comentaris", passar.obtenirComentaris());
         llibre.putExtra("ISBN", passar.obtenirISBN());
         llibre.putExtra("text", passar.obtenirText());
