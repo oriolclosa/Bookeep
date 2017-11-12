@@ -159,6 +159,7 @@ public class ControladorDomini {
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
             if (r.get(i).get(6) == null) r.get(i).set(6, "");
+            System.out.println(r.get(i).get(4));
             Resenya re = new Resenya(r.get(i).get(1), r.get(i).get(2),Float.parseFloat(r.get(i).get(3)), r.get(i).get(4));
             res.add(re);
         }
