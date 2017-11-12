@@ -52,7 +52,7 @@ public class BookActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Date date = new Date();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmssa");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
                 String formattedDate = sdf.format(date);
                 ctrlPresentacio.ferComentari(getTitle().toString(), ((EditText) findViewById(R.id.userText)).getText().toString(), formattedDate, ((RatingBar) findViewById(R.id.ratingText)).getRating(), ((EditText) findViewById(R.id.comentariText)).getText().toString());
                 mostrarComentaris();
