@@ -20,6 +20,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.bookeep.teamnani.bookeep.R;
@@ -82,6 +84,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         starred.addView(starred2);
     }
 
+    private LinearLayout carregarLlibresCercats(ArrayList<Llibre> rebuts){
+        TableLayout starred2 = new TableLayout(this);
+        ArrayList<Llibre> llibresStarred = rebuts;
+        TableRow starred3 = new TableRow(this);
+        for(int i=0; i<llibresStarred.size(); ++i){
+            String path = llibresStarred.get(i).obtenirPortada();
+            Bitmap imgBitmap = null;
+            Imatges internet = new Imatges(imgBitmap);
+            try {
+                imgBitmap = internet.execute(path).get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            ImageButton actual = new ImageButton(this);
+            actual.setImageBitmap(Bitmap.createScaledBitmap(imgBitmap, 200, 300, false));
+            actual.setBackground(null);
+            actual.setPadding(0, 0, 0, 0);
+            actual.setId(tots.size());
+            tots.add(llibresStarred.get(i));
+            actual.setOnClickListener(this);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            if(i==0){
+                Resources r = getResources();
+                float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 25, r.getDisplayMetrics());
+                lp.setMargins((int) px, 0, 0, 0);
+            }
+            else if(i==(llibresStarred.size()-1)){
+                Resources r = getResources();
+                float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 25, r.getDisplayMetrics());
+                lp.setMargins(25, 0, (int) px, 0);
+            }
+            else {
+                lp.setMargins(25, 0, 0, 0);
+            }
+            actual.setLayoutParams(lp);
+            starred3.addView(actual);
+            if(((i+1)%3)==0){
+                starred2.addView(starred3);
+                starred3 = new TableRow(this);
+            }
+        }
+
+        return starred2;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,7 +174,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         LinearLayout cont = (LinearLayout) findViewById(R.id.contingut);
         ViewGroup contPar = (ViewGroup) cont.getParent();
         contPar.removeView(cont);
-        LinearLayout cont2 = new LinearLayout(this);
         EditText cerca = (EditText) findViewById(R.id.editText);
         String cerca2 = cerca.getText().toString();
         ArrayList<Llibre> llista;
@@ -138,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             llista = ctrlPresentacio.obtenirCercaTitol(cerca2);
         }
 
-        System.out.println(llista.get(0).obtenirTitol());
+        LinearLayout cont2 = carregarLlibresCercats(llista);
         contPar.addView(cont2);
     }
 
