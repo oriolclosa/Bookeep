@@ -115,8 +115,5 @@ public class ControladorDades {
         File fileLlibres = new File("\\dade\\llibres.txt");
     }
 
-    public void creaDataAutor(){
-        File autor
-    }
 
 }
