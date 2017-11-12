@@ -92,7 +92,7 @@ public class ControladorDades {
         GoogleAPIBook api = new GoogleAPIBook();
         try {
 
-            api.execute("inauthor:"+s, "llibres", "relevance").get();
+            api.execute("inauthor:"+s, "books", "relevance").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -111,7 +111,7 @@ public class ControladorDades {
         GoogleAPIBook api = new GoogleAPIBook();
         try {
 
-            api.execute("intitle:"+s, "llibres", "relevance").get();
+            api.execute("intitle:"+s, "books", "relevance").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
