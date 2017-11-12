@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private LinearLayout carregarLlibresCercats(ArrayList<Llibre> rebuts){
         LinearLayout starred2 = new TableLayout(this);
+        starred2.setId(R.id.contingut);
         starred2.setOrientation(LinearLayout.VERTICAL);
         ArrayList<Llibre> llibresStarred = rebuts;
         for(int i=0; i<llibresStarred.size(); ++i){

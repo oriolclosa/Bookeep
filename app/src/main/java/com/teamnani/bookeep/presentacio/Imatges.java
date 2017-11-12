@@ -33,6 +33,19 @@ public class Imatges extends AsyncTask<String, Void, Bitmap> {
             return myBitmap;
         } catch (IOException e) {
             // Log exception
+            System.out.println("MERDA");
+            try{
+                URL url = new URL("https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg");
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setDoInput(true);
+                connection.connect();
+                InputStream input = connection.getInputStream();
+                Bitmap myBitmap = BitmapFactory.decodeStream(input);
+                return myBitmap;
+            }
+            catch(IOException e1){
+
+            }
             return null;
         }
     }
