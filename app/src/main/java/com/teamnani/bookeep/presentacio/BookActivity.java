@@ -46,11 +46,11 @@ public class BookActivity extends AppCompatActivity {
                 autors = autors.substring(2, autors.length() - 1);
             }
         }
-        llibAutor.setText("Autor: " + autors);
+        llibAutor.setText(autors);
         TextView llibAny = (TextView) findViewById(R.id.anyText);
-        llibAny.setText("Year: " + llibre.getStringExtra("any"));
+        llibAny.setText(llibre.getStringExtra("any"));
         TextView llibEditorial = (TextView) findViewById(R.id.editorialText);
-        llibEditorial.setText("Publisher: " + llibre.getStringExtra("editorial"));
+        llibEditorial.setText(llibre.getStringExtra("editorial"));
 
 
         String path = llibre.getStringExtra("portada");
@@ -65,7 +65,7 @@ public class BookActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         ImageView actual = (ImageView) findViewById(R.id.llibreImage);
-        actual.setImageBitmap(Bitmap.createScaledBitmap(imgBitmap, 400, 600, false));
+        actual.setImageBitmap(Bitmap.createScaledBitmap(imgBitmap, 1000, 1500, false));
         actual.setBackground(null);
         actual.setPadding(0, 0, 0, 0);
     }
