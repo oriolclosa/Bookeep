@@ -84,5 +84,13 @@ public class BookActivity extends AppCompatActivity {
 
         ProgressBar llibProg2 = (ProgressBar) findViewById(R.id.progressBar);
         llibProg2.setProgress(76);
+
+        TextView llibText = (TextView) findViewById(R.id.textText);
+        String text = llibre.getStringExtra("text");
+        if(text.length()>50){
+            text.substring(0, 50);
+            text += "...";
+        }
+        llibText.setText(text);
     }
 }

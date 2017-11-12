@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ctrlPresentacio = new ControladorPresentacio();
         setContentView(R.layout.activity_main);
 
-        setTitle("Daily recomendations");
+        setTitle("");
 
         tots = new ArrayList<>();
 
@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         llibre.putExtra("puntuacio", passar.obtenirPuntuacio());
         llibre.putExtra("comentaris", passar.obtenirComentaris());
         llibre.putExtra("ISBN", passar.obtenirISBN());
+        llibre.putExtra("text", passar.obtenirText());
         startActivity(llibre);
     }
 }
