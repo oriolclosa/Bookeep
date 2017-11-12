@@ -136,4 +136,8 @@ public class ControladorDomini {
         }
         return ll;
     }
+
+    public void afegirComentari(String titol, String nick, String data, float punt, String com){
+        ctrlDades.afegirComentari(titol, nick, data, punt, com);
+    }
 }

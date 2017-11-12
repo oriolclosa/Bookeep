@@ -16,6 +16,8 @@ public class ControladorPresentacio {
     private ControladorDomini ctrlDomini;
     private List<String> topics = Arrays.asList("asimov", "jo nesbo", "rowling", "king", "austen", "terror", "dramatic", "history", "doctor", "twain", "conan", "catalonia", "agatha", "tolkien", "verne", "dickens", "biography", "dogs", "technology", "gardens", "magic", "world", "water", "black", "blood", "higgins", "computer", "mobile", "train", "general", "war");
 
+    private static ControladorPresentacio ctrlPresentacio = null;
+
     public ControladorPresentacio(){
         ctrlDomini = new ControladorDomini(this);
     }
@@ -49,7 +51,14 @@ public class ControladorPresentacio {
         return ctrlDomini.obtenirLlibresAutor(autor);
     }
 
-    public void ferComentari(){
-        ctrlDomini.afegirComentari();
+    public void ferComentari(String titol, String nick, String data, float punt, String com){
+        ctrlDomini.afegirComentari(titol, nick, data, punt, com);
+    }
+
+    static ControladorPresentacio getInstance(){
+        if(ctrlPresentacio == null){
+            ctrlPresentacio = new ControladorPresentacio();
+        }
+        return ctrlPresentacio;
     }
 }

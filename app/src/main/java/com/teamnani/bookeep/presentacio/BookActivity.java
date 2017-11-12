@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -19,6 +22,7 @@ import com.bookeep.teamnani.bookeep.R;
 import com.teamnani.bookeep.domini.Llibre;
 
 import java.lang.reflect.Array;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,16 +30,20 @@ import java.util.concurrent.ExecutionException;
 
 public class BookActivity extends AppCompatActivity {
 
+    private ControladorPresentacio ctrlPresentacio;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
+        ctrlPresentacio = ControladorPresentacio.getInstance();
+
         Button afegir = (Button) findViewById(R.id.commentButton);
         afegir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctrlPresentacio.ferComentari(getTitle(), "joe", new Timestamp(System.currentTimeMillis()), (RatingBar) findViewById(R.id.ratingText));
+                ctrlPresentacio.ferComentari(getTitle().toString(), "joe", (new Timestamp(System.currentTimeMillis())).toString(), ((RatingBar) findViewById(R.id.ratingText)).getRating(), ((EditText) findViewById(R.id.comentariText)).toString());
             }
         });
 

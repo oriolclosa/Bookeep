@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ctrlPresentacio = new ControladorPresentacio();
+        ctrlPresentacio = ControladorPresentacio.getInstance();
         setContentView(R.layout.activity_main);
 
         setTitle("Bookeep");
