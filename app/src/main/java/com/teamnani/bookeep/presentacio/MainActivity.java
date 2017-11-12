@@ -186,6 +186,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             llista = ctrlPresentacio.obtenirCercaTitol(cerca2);
         }
 
+        System.out.println(llista.get(0).obtenirTitol());
+
         LinearLayout cont2 = carregarLlibresCercats(llista);
         contPar.addView(cont2);
     }
