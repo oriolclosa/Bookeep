@@ -1,7 +1,6 @@
 package com.teamnani.bookeep.dades;
 
 import android.net.Uri;
-import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -34,7 +33,7 @@ public class NetworkUtils {
                     .appendQueryParameter(ORDER_BY, relnew)
                     .build();
 
-        System.out.println(buildUri.toString());
+
 
         try {
             URL requestURL = new URL(buildUri.toString());
