@@ -70,7 +70,7 @@ public class ConnectMySQL {
         ArrayList<ArrayList<String>> coments = new ArrayList<>();
         try{
             Connection con = getConnection();
-            PreparedStatement stmt = con.prepareStatement("select * from comments c, llibres l where l.nick = c.nick and l.titol = '" +titol+ "'");
+            PreparedStatement stmt = con.prepareStatement("select * from coments c, llibres l where l.nick = c.nick and l.titol = '" +titol+ "'");
             ResultSet Rs = stmt.executeQuery();
             while(Rs.next()){
                 ArrayList<String> atributes = new ArrayList<>(Arrays.asList(Rs.getString(0), Rs.getString(1), Rs.getString(2), Rs.getString(3)));
