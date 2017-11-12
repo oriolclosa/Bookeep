@@ -48,8 +48,14 @@ public class BookActivity extends AppCompatActivity {
             }
         }
         llibAutor.setText(autors);
+
         TextView llibAny = (TextView) findViewById(R.id.anyText);
-        llibAny.setText(llibre.getStringExtra("any"));
+        String any = llibre.getStringExtra("any");
+        if(any.length()>4){
+            any = any.substring(0, 4);
+        }
+        llibAny.setText(any);
+
         TextView llibEditorial = (TextView) findViewById(R.id.editorialText);
         llibEditorial.setText(llibre.getStringExtra("editorial"));
 
@@ -69,6 +75,9 @@ public class BookActivity extends AppCompatActivity {
         actual.setImageBitmap(Bitmap.createScaledBitmap(imgBitmap, 1000, 1500, false));
         actual.setBackground(null);
         actual.setPadding(0, 0, 0, 0);
+
+        TextView llibISBN = (TextView) findViewById(R.id.isbnText);
+        llibISBN.setText(llibre.getStringExtra("ISBN"));
 
         TextView llibProg = (TextView) findViewById(R.id.progressText);
         llibProg.setText("7.56");
