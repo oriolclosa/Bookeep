@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String path = llibresStarred.get(i).obtenirPortada();
             Bitmap imgBitmap = null;
             Imatges internet = new Imatges(imgBitmap);
-            System.out.println(path);
             try {
                 imgBitmap = internet.execute(path).get();
             } catch (InterruptedException e) {

@@ -58,6 +58,14 @@
                 android:textSize="18sp"
                 android:textStyle="italic" />
 
+            <ProgressBar
+                android:id="@+id/progressBar3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:progress="50" />
+
         </LinearLayout>
 
     </LinearLayout>
