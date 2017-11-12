@@ -48,11 +48,20 @@ public class ControladorDomini {
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
             if (r.get(i).get(6) == null) r.get(i).set(6, "");
-            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), (float) 7.7, 0, r.get(i).get(5), r.get(i).get(6));
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), calculaMitResenyesTitol(r.get(i).get(0)), 0, r.get(i).get(5), r.get(i).get(6));
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
         return ll;
+    }
+
+    private float calculaMitResenyesTitol(String titol) {
+        ArrayList<ArrayList<String> > mit = ctrlDades.obtenirBugs(titol);
+        float m = 0;
+        for (int i = 0; i < mit.size(); ++i) m += Float.parseFloat(mit.get(i).get(2));
+        m *= 2;
+        m /= mit.size();
+        return m;
     }
 
     public ArrayList<Llibre> obtenirLlibresTitol(String query) {
@@ -64,7 +73,7 @@ public class ControladorDomini {
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
             if (r.get(i).get(6) == null) r.get(i).set(6, "");
-            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), (float) 8.1, 0, r.get(i).get(5), r.get(i).get(6));
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), calculaMitResenyesTitol(r.get(i).get(0)), 0, r.get(i).get(5), r.get(i).get(6));
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
@@ -81,7 +90,7 @@ public class ControladorDomini {
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
             if (r.get(i).get(6) == null) r.get(i).set(6, "");
-            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), (float) 5.9, 0, r.get(i).get(5), r.get(i).get(6));
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), calculaMitResenyesTitol(r.get(i).get(0)), 0, r.get(i).get(5), r.get(i).get(6));
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
@@ -97,7 +106,7 @@ public class ControladorDomini {
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
             if (r.get(i).get(6) == null) r.get(i).set(6, "");
-            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), (float) 6.2, 0, r.get(i).get(5), r.get(i).get(6));
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), calculaMitResenyesTitol(r.get(i).get(0)), 0, r.get(i).get(5), r.get(i).get(6));
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
@@ -113,7 +122,7 @@ public class ControladorDomini {
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
             if (r.get(i).get(6) == null) r.get(i).set(6, "");
-            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4),(float) 7.4, 0, r.get(i).get(5), r.get(i).get(6));
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4),calculaMitResenyesTitol(r.get(i).get(0)), 0, r.get(i).get(5), r.get(i).get(6));
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
@@ -130,7 +139,7 @@ public class ControladorDomini {
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
             if (r.get(i).get(4) == null) r.get(i).set(4, "");
             if (r.get(i).get(6) == null) r.get(i).set(6, "");
-            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), (float) 5.5, 0, r.get(i).get(5), r.get(i).get(6));
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), calculaMitResenyesTitol(r.get(i).get(0)), 0, r.get(i).get(5), r.get(i).get(6));
             //Faltan funcions per calcular pun i com en funcio del nom del llibre
             ll.add(l);
         }
