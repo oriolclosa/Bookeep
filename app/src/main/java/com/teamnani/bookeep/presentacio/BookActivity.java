@@ -25,9 +25,13 @@ import com.teamnani.bookeep.domini.Llibre;
 import com.teamnani.bookeep.domini.Resenya;
 
 import java.lang.reflect.Array;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -47,7 +51,10 @@ public class BookActivity extends AppCompatActivity {
         afegir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctrlPresentacio.ferComentari(getTitle().toString(), ((EditText) findViewById(R.id.userText)).getText().toString(), (new Timestamp(System.currentTimeMillis())).toString(), ((RatingBar) findViewById(R.id.ratingText)).getRating(), ((EditText) findViewById(R.id.comentariText)).getText().toString());
+                Date date = new Date();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmssa");
+                String formattedDate = sdf.format(date);
+                ctrlPresentacio.ferComentari(getTitle().toString(), ((EditText) findViewById(R.id.userText)).getText().toString(), formattedDate, ((RatingBar) findViewById(R.id.ratingText)).getRating(), ((EditText) findViewById(R.id.comentariText)).getText().toString());
                 mostrarComentaris();
             }
         });
@@ -114,7 +121,9 @@ public class BookActivity extends AppCompatActivity {
         llibISBN.setText(llibre.getStringExtra("ISBN"));
 
         TextView llibProg = (TextView) findViewById(R.id.progressText);
-        llibProg.setText(llibre.getStringExtra("puntuacio"));
+        BigDecimal value=new BigDecimal(Float.parseFloat(llibre.getStringExtra("puntuacio")));
+        value = value.setScale(2, RoundingMode.HALF_EVEN);
+        llibProg.setText(String.valueOf(value.floatValue()));
 
         ProgressBar llibProg2 = (ProgressBar) findViewById(R.id.progressBar);
         llibProg2.setProgress((int) Float.parseFloat(llibre.getStringExtra("puntuacio"))*10);

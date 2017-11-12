@@ -74,7 +74,7 @@ public class ConnectMySQL {
                     "= c.time and l.title = '" +titol+ "'");
             ResultSet Rs = stmt.executeQuery();
             while(Rs.next()){
-                ArrayList<String> atributes = new ArrayList<>(Arrays.asList(Rs.getString(0), Rs.getString(1), Rs.getString(2), Rs.getString(3)));
+                ArrayList<String> atributes = new ArrayList<>(Arrays.asList(Rs.getString("nick"), Rs.getString("time"), Rs.getString("rate"), Rs.getString("coment")));
                 coments.add(atributes);
             }
             con.close();
