@@ -107,6 +107,25 @@ public class ControladorDades {
         }*/
         return books;
     }
+    public ArrayList<ArrayList<String>> llibrePerTitols(String s){
+        GoogleAPIBook api = new GoogleAPIBook();
+        try {
+
+            api.execute("intitle:"+s, "llibres", "relevant").get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        ArrayList<ArrayList<String>> books = api.obtenirBooks();
+        /*for (int i = 0; i < books.size(); ++i){
+            System.out.println(i);
+            for (int j = 0; j < books.get(i).size(); ++j){
+                System.out.println(books.get(i).get(j));
+            }
+        }*/
+        return books;
+    }
 
     private void createFiles(){
         try {

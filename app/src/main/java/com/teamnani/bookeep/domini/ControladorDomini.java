@@ -27,29 +27,44 @@ public class ControladorDomini {
         ctrlDades = new ControladorDades();
     }
 
-    public ArrayList<Llibre> obtenirNous() {
-        ArrayList<Llibre> t = new ArrayList<>();
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
-        t.add(new Llibre("Aquest es el titol",  "Aquest es l'autor", "1997", "La meva editorial", "exemple.jpg", (float) 3.2,4,"1", "Text"));
-        return t;
-    }
-
     public ArrayList<Resenya> obtenirResenyesAutor(String s) {
-        ArrayList<Resenya> r = new ArrayList<>(); //obtenirResenyesAutorDades(String s);
+        ArrayList<Resenya> r = new ArrayList<>(); //obtenirResenyesAutorDades(s);
         return r;
     }
 
     public ArrayList<Resenya> obtenirResenyesLlibre(String s) {
-        ArrayList<Resenya> r = new ArrayList<>(); //obtenirResenyesLlibreDades(String s);
+        ArrayList<Resenya> r = new ArrayList<>(); //obtenirResenyesLlibreDades(s);
         return r;
+    }
+
+    public ArrayList<Llibre> obtenirLlibresAutor(String query) {
+        ArrayList<ArrayList<String> > r = ctrlDades.llibrePerAutors(query);
+        ArrayList<Llibre> ll = new ArrayList<>();
+        for (int i = 0; i < r.size(); ++i) {
+            if (r.get(i).get(1) == null) r.get(i).set(1, "");
+            if (r.get(i).get(2) == null) r.get(i).set(2, "");
+            if (r.get(i).get(3) == null) r.get(i).set(3, "");
+            if (r.get(i).get(4) == null) r.get(i).set(4, "");
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), 0, 0, r.get(i).get(5), r.get(i).get(6));
+            //Faltan funcions per calcular pun i com en funcio del nom del llibre
+            ll.add(l);
+        }
+        return ll;
+    }
+
+    public ArrayList<Llibre> obtenirLlibresTitol(String query) {
+        ArrayList<ArrayList<String> > r = ctrlDades.llibrePerTitols(query);
+        ArrayList<Llibre> ll = new ArrayList<>();
+        for (int i = 0; i < r.size(); ++i) {
+            if (r.get(i).get(1) == null) r.get(i).set(1, "");
+            if (r.get(i).get(2) == null) r.get(i).set(2, "");
+            if (r.get(i).get(3) == null) r.get(i).set(3, "");
+            if (r.get(i).get(4) == null) r.get(i).set(4, "");
+            Llibre l = new Llibre(r.get(i).get(0), r.get(i).get(1), r.get(i).get(2), r.get(i).get(3), r.get(i).get(4), 0, 0, r.get(i).get(5), r.get(i).get(6));
+            //Faltan funcions per calcular pun i com en funcio del nom del llibre
+            ll.add(l);
+        }
+        return ll;
     }
 
     public ArrayList<Llibre> obtenirLlibresMesLlegits(String query) {
