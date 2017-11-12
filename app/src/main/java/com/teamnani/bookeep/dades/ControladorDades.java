@@ -107,12 +107,14 @@ public class ControladorDades {
     }
 
     private void createFiles(){
+        System.out.println("lalallala");
         File folder = new File("/dades");
         if(!folder.exists()){
             folder.mkdir();
             System.out.println("noexisita");
         }
         else System.out.println("exisita");
+
         File fileAutors = new File("/dades/autors.txt");
         File fileLlibres = new File("/dades/llibres.txt");
 
