@@ -67,14 +67,14 @@ public class ConnectMySQL {
     }
 
     public ArrayList<ArrayList<String>> obteComentarisLlibre(String titol) {
-        ArrayList<ArrayList<String>> coments;
+        ArrayList<ArrayList<String>> coments = new ArrayList<>();
         try{
             Connection con = getConnection();
             PreparedStatement stmt = con.prepareStatement("select * from comments c, llibres l where l.nick = c.nick and l.titol = '" +titol+ "'");
             ResultSet Rs = stmt.executeQuery();
             while(Rs.next()){
-                ArrayList<String> atributes = new ArrayList<>(Arrays.asList(Rs.getString(0), Rs.getString(1)getnick, time, rate, comment)
-                st_ct.add(Rs.getString(1));
+                ArrayList<String> atributes = new ArrayList<>(Arrays.asList(Rs.getString(0), Rs.getString(1), Rs.getString(2), Rs.getString(3)));
+                coments.add(atributes);
             }
             con.close();
         } catch (SQLException e) {
@@ -82,6 +82,6 @@ public class ConnectMySQL {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return st_ct;
+        return coments;
     }
 }
