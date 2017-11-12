@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String cerca2 = cerca.getText().toString();
         ArrayList<Llibre> llista;
 
-        setTitle("Cerca: " + cerca2);
+        setTitle("Search results for " + cerca2);
 
         final Switch cerca3 = (Switch) findViewById(R.id.switchAutor);
         if(cerca3.isChecked()){
