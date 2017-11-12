@@ -38,7 +38,9 @@ public class ControladorDomini {
     }
 
     public ArrayList<Llibre> obtenirLlibresAutor(String query) {
+        System.out.println(query);
         ArrayList<ArrayList<String> > r = ctrlDades.llibrePerAutors(query);
+        System.out.println(r.size());
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
             if (r.get(i).get(1) == null) r.get(i).set(1, "");
