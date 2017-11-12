@@ -1,5 +1,6 @@
 package com.teamnani.bookeep.presentacio;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -11,8 +12,10 @@ import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -107,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cercar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Shit happens");
+                mostrarLlibres();
             }
         });
 
@@ -116,6 +119,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         carregarLlibres(ctrlPresentacio.obtenirÚltimsLlibres(), R.id.scrollLatest);
         carregarLlibres(ctrlPresentacio.obtenirÚltimesRevistes(), R.id.scrollLatestMag);
 
+    }
+
+    private void mostrarLlibres(){
+        LinearLayout cont = (LinearLayout) findViewById(R.id.contingut);
+        ViewGroup contPar = (ViewGroup) cont.getParent();
+        contPar.removeView(cont);
+        LinearLayout cont2 = new LinearLayout(this);
+        EditText cerca = (EditText) findViewById(R.id.editText);
+        String cerca2 = cerca.getText().toString();
+        ArrayList<Llibre> llista;
+
+        final Switch cerca3 = (Switch) findViewById(R.id.switchAutor);
+        if(cerca3.isChecked()){
+            llista = ctrlPresentacio.obtenirCercaTitol(cerca2);
+        }
+        else{
+            llista = ctrlPresentacio.obtenirCercaAutor(cerca2);
+        }
+
+        System.out.println(llista.get(0).obtenirTitol());
+        contPar.addView(cont2);
     }
 
     @Override
