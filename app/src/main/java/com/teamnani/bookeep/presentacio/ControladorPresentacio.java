@@ -64,6 +64,6 @@ public class ControladorPresentacio {
     }
 
     public ArrayList<Resenya> obtenirResenyesLlibre(String titol){
-        return ctrlDomini.obtenirResenyesLlibre(titol);
+        return ctrlDomini.obtenirComentarisLlibres(titol);
     }
 }
