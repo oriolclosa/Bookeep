@@ -57,11 +57,14 @@ public class ControladorDomini {
 
     private float calculaMitResenyesTitol(String titol) {
         ArrayList<ArrayList<String> > mit = ctrlDades.obtenirComentarisLlibre(titol);
-        float m = 0;
-        for (int i = 0; i < mit.size(); ++i) m += Float.parseFloat(mit.get(i).get(2));
-        m *= 2;
-        m /= mit.size();
-        return m;
+        if (mit.size() > 0) {
+            float m = 0;
+            for (int i = 0; i < mit.size(); ++i) m += Float.parseFloat(mit.get(i).get(2));
+            m *= 2;
+            m /= mit.size();
+            return m;
+        }
+        else return 5;
     }
 
     public ArrayList<Llibre> obtenirLlibresTitol(String query) {
