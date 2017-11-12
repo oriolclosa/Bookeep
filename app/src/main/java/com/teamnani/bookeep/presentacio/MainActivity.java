@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
@@ -99,6 +100,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 else{
                     cerca2.setText("by title");
                 }
+            }
+        });
+
+        Button cercar = (Button) findViewById(R.id.buttonCercar);
+        cercar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Shit happens");
             }
         });
 
