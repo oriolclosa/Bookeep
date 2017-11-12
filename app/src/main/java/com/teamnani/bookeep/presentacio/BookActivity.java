@@ -47,7 +47,7 @@ public class BookActivity extends AppCompatActivity {
         afegir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctrlPresentacio.ferComentari(getTitle().toString(), "joe", (new Timestamp(System.currentTimeMillis())).toString(), ((RatingBar) findViewById(R.id.ratingText)).getRating(), ((EditText) findViewById(R.id.comentariText)).getText().toString());
+                ctrlPresentacio.ferComentari(getTitle().toString(), ((EditText) findViewById(R.id.userText)).getText().toString(), (new Timestamp(System.currentTimeMillis())).toString(), ((RatingBar) findViewById(R.id.ratingText)).getRating(), ((EditText) findViewById(R.id.comentariText)).getText().toString());
                 mostrarComentaris();
             }
         });
@@ -117,7 +117,7 @@ public class BookActivity extends AppCompatActivity {
         llibProg.setText(llibre.getStringExtra("puntuacio"));
 
         ProgressBar llibProg2 = (ProgressBar) findViewById(R.id.progressBar);
-        llibProg2.setProgress((int) Float.parseFloat(llibre.getStringExtra("puntuacio")));
+        llibProg2.setProgress((int) Float.parseFloat(llibre.getStringExtra("puntuacio"))*10);
 
         TextView llibText = (TextView) findViewById(R.id.textText);
         String text = llibre.getStringExtra("descripcio");
@@ -132,18 +132,15 @@ public class BookActivity extends AppCompatActivity {
 
         resenyes = ctrlPresentacio.obtenirResenyesLlibre(llibre.getStringExtra("titol"));
 
-        LinearLayout coments = (LinearLayout) findViewById(R.id.comentarisArea);
-        coments.addView(afegirComentaris(resenyes, R.id.comentarisArea));
     }
 
     private void mostrarComentaris(){
         LinearLayout coments = (LinearLayout) findViewById(R.id.comentarisArea);
-        ViewGroup comentsPar = (ViewGroup) coments.getParent();
-        comentsPar.removeView(comentsPar);
-        comentsPar.addView(afegirComentaris(resenyes, R.id.comentarisArea));
+        coments.removeView(findViewById(R.id.comentarisEntrada));
+        afegirComentaris(resenyes, R.id.comentarisArea);
     }
 
-    private LinearLayout afegirComentaris(ArrayList<Resenya> res, int ident){
+    private void afegirComentaris(ArrayList<Resenya> res, int ident){
         LinearLayout starred2 = (LinearLayout) findViewById(ident);
         starred2.setOrientation(LinearLayout.HORIZONTAL);
         for(int i=0; i<res.size(); ++i){
@@ -164,6 +161,5 @@ public class BookActivity extends AppCompatActivity {
             titolText.setTextSize((float) 16);
             starred2.addView(titolText);
         }
-        return starred2;
     }
 }

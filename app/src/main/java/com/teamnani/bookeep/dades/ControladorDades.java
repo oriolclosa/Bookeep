@@ -162,7 +162,7 @@ public class ControladorDades {
         c.setComment(titol, nick, data, punt, com);
     }
 
-    public ArrayList<ArrayList<String>> obtenirComentariLlibre (String titol){
+    public ArrayList<ArrayList<String>> obtenirComentarisLlibre (String titol){
         ConnectMySQL c = new ConnectMySQL();
         return c.obteComentarisLlibre(titol);
     }

@@ -143,7 +143,7 @@ public class ControladorDomini {
 
     public ArrayList<Resenya> obtenirComentarisLlibres(String titol) {
         ArrayList<Resenya> res = new ArrayList<>();
-        ArrayList<ArrayList<String> > r = obtenirComentarisLlibre(titol);
+        ArrayList<ArrayList<String> > r = ctrlDades.obtenirComentarisLlibre(titol);
         for (int i = 0; i < r.size(); ++i) {
             if (r.get(i).get(1) == null) r.get(i).set(1, "");
             if (r.get(i).get(2) == null) r.get(i).set(2, "");

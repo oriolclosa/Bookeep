@@ -127,6 +127,7 @@
                 android:paddingTop="20dp">
 
                 <LinearLayout
+                    android:id="@+id/comentarisEntrada"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -150,10 +151,19 @@
                         android:stepSize="0.1" />
 
                     <EditText
+                        android:id="@+id/userText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Username"
+                        android:inputType="textPersonName" />
+
+                    <EditText
                         android:id="@+id/comentariText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:hint="Coment"
                         android:inputType="textMultiLine"
                         android:paddingBottom="10dp" />
 
