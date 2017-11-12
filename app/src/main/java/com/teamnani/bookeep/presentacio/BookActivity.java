@@ -10,6 +10,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -68,5 +69,11 @@ public class BookActivity extends AppCompatActivity {
         actual.setImageBitmap(Bitmap.createScaledBitmap(imgBitmap, 1000, 1500, false));
         actual.setBackground(null);
         actual.setPadding(0, 0, 0, 0);
+
+        TextView llibProg = (TextView) findViewById(R.id.progressText);
+        llibProg.setText("7.56");
+
+        ProgressBar llibProg2 = (ProgressBar) findViewById(R.id.progressBar);
+        llibProg2.setProgress(76);
     }
 }
