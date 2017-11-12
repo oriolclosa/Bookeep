@@ -1,6 +1,7 @@
 package com.teamnani.bookeep.dades;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -8,6 +9,7 @@ public class ControladorDades {
 
     public ControladorDades(){
         createFiles();
+        testFiles();
     }
 
     public ArrayList<ArrayList<String>> obtenirLlibresMesLlegitsAPI(String s){
@@ -107,16 +109,32 @@ public class ControladorDades {
     }
 
     private void createFiles(){
-        System.out.println("lalallala");
-        File folder = new File("/dades");
-        if(!folder.exists()){
-            folder.mkdir();
-            System.out.println("noexisita");
-        }
-        else System.out.println("exisita");
+        try {
 
-        File fileAutors = new File("/dades/autors.txt");
-        File fileLlibres = new File("/dades/llibres.txt");
+        }
+        catch (Exception e){
+
+        }
+        File fileAutors = new File("autors.txt");
+        if(fileAutors.exists()) System.out.println("existia avans de crear");
+        try{
+            fileAutors.createNewFile();
+        }
+        catch(Exception e){}
+        if(fileAutors.exists()) System.out.println("existia despres");
+        if(!fileAutors.exists()) System.out.println("something is wrong");
+        File fileLlibres = new File("llibres.txt");
+
+
+    }
+    private void testFiles(){
+        File archivo = new File("autors.txt");
+        try {
+        FileWriter escriure = new FileWriter(archivo);
+        }
+        catch (Exception e){
+            System.out.println("ORIOL TENIA YO RAO PENDEJO");
+        }
 
     }
 
