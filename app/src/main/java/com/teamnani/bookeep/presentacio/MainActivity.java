@@ -132,10 +132,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         final Switch cerca3 = (Switch) findViewById(R.id.switchAutor);
         if(cerca3.isChecked()){
-            llista = ctrlPresentacio.obtenirCercaTitol(cerca2);
+            llista = ctrlPresentacio.obtenirCercaAutor(cerca2);
         }
         else{
-            llista = ctrlPresentacio.obtenirCercaAutor(cerca2);
+            llista = ctrlPresentacio.obtenirCercaTitol(cerca2);
         }
 
         System.out.println(llista.get(0).obtenirTitol());
