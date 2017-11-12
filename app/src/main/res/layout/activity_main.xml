@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:paddingBottom="10dp"
+                    android:paddingBottom="0dp"
                     android:paddingLeft="25dp"
                     android:paddingRight="25dp"
                     android:paddingTop="20dp">
@@ -50,10 +50,11 @@
                             tools:layout_editor_absoluteY="16dp" />
 
                         <TextView
+                            android:id="@+id/textBy"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Search"
+                            android:text="by title"
                             android:textAlignment="textEnd"
                             android:textSize="12sp"
                             tools:layout_editor_absoluteX="16dp"
@@ -61,12 +62,33 @@
 
                         <Switch
                             android:id="@+id/switchAutor"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="right|center_vertical"
                             android:layout_margin="0dp"
                             android:layout_weight="1"
                             android:padding="0dp" />
                     </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:ems="10"
+                        android:hint="Title"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:text="SUBMIT" />
 
                 </LinearLayout>
 
