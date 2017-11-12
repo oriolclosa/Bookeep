@@ -9,8 +9,10 @@ import android.os.Environment;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.style.TextAppearanceSpan;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -26,6 +28,8 @@ import android.widget.TextView;
 
 import com.bookeep.teamnani.bookeep.R;
 import com.teamnani.bookeep.domini.Llibre;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.IOException;
@@ -85,11 +89,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private LinearLayout carregarLlibresCercats(ArrayList<Llibre> rebuts){
-        LinearLayout starred2 = new TableLayout(this);
+        LinearLayout starred2 = new LinearLayout(this);
         starred2.setId(R.id.contingut);
         starred2.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        Resources r2 = getResources();
+        float px2 = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 25, r2.getDisplayMetrics());
+        float px3 = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20, r2.getDisplayMetrics());
+        lp2.setMargins((int) px2, (int) px3, (int) px2, (int) px3);
+        starred2.setLayoutParams(lp2);
         ArrayList<Llibre> llibresStarred = rebuts;
         for(int i=0; i<llibresStarred.size(); ++i){
+            LinearLayout starred3 = new LinearLayout(this);
+            starred3.setOrientation(LinearLayout.HORIZONTAL);
             String path = llibresStarred.get(i).obtenirPortada();
             Bitmap imgBitmap = null;
             System.out.println(path);
@@ -102,28 +114,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 e.printStackTrace();
             }
             ImageButton actual = new ImageButton(this);
-            actual.setImageBitmap(Bitmap.createScaledBitmap(imgBitmap, 200, 300, false));
+            actual.setImageBitmap(Bitmap.createScaledBitmap(imgBitmap, 300, 450, false));
             actual.setBackground(null);
             actual.setPadding(0, 0, 0, 0);
             actual.setId(tots.size());
             tots.add(llibresStarred.get(i));
             actual.setOnClickListener(this);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            if(i==0){
-                Resources r = getResources();
-                float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 25, r.getDisplayMetrics());
-                lp.setMargins((int) px, 0, 0, 0);
-            }
-            else if(i==(llibresStarred.size()-1)){
-                Resources r = getResources();
-                float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 25, r.getDisplayMetrics());
-                lp.setMargins(25, 0, (int) px, 0);
-            }
-            else {
-                lp.setMargins(25, 0, 0, 0);
-            }
+            Resources r = getResources();
+            float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 25, r.getDisplayMetrics());
+            lp.setMargins(0, 0, (int) px, 0);
             actual.setLayoutParams(lp);
-            starred2.addView(actual);
+            LinearLayout starred4 = new LinearLayout(this);
+            starred4.setOrientation(LinearLayout.HORIZONTAL);
+            starred3.addView(actual);
+            TextView titolText = new TextView(this);
+            titolText.setText(llibresStarred.get(i).obtenirTitol());
+            titolText.setTextSize((float) 16);
+            titolText.setTypeface(titolText.getTypeface(), Typeface.BOLD);
+            starred4.addView(titolText);
+            TextView autorText = new TextView(this);
+            autorText.setText(llibresStarred.get(i).obtenirAutor());
+            autorText.setTextSize((float) 14);
+            starred4.addView(autorText);
+            starred4.setGravity(Gravity.RIGHT);
+            starred3.addView(starred4);
+            starred2.addView(starred3);
         }
         return starred2;
     }
@@ -160,14 +176,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        Button cancel = (Button) findViewById(R.id.buttonCancelar);
+        cancel.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(getIntent());
+            }
+        });
+
         carregarLlibres(ctrlPresentacio.obtenirLlegitsLlibres(), R.id.scrollStarred);
         carregarLlibres(ctrlPresentacio.obtenirLlegidesRevistes(), R.id.scrollStarredMag);
         carregarLlibres(ctrlPresentacio.obtenirÚltimsLlibres(), R.id.scrollLatest);
         carregarLlibres(ctrlPresentacio.obtenirÚltimesRevistes(), R.id.scrollLatestMag);
-
     }
 
     private void mostrarLlibres(){
+        tots = new ArrayList<>();
         LinearLayout cont = (LinearLayout) findViewById(R.id.contingut);
         ViewGroup contPar = (ViewGroup) cont.getParent();
         contPar.removeView(cont);
@@ -198,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         llibre.putExtra("puntuacio", String.valueOf(passar.obtenirPuntuacio()));
         llibre.putExtra("comentaris", passar.obtenirComentaris());
         llibre.putExtra("ISBN", passar.obtenirISBN());
-        llibre.putExtra("text", passar.obtenirText());
+        llibre.putExtra("descripcio", passar.obtenirText());
         startActivity(llibre);
     }
 }

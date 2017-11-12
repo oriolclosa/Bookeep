@@ -99,7 +99,7 @@ public class BookActivity extends AppCompatActivity {
         llibProg2.setProgress((int) Float.parseFloat(llibre.getStringExtra("puntuacio")));
 
         TextView llibText = (TextView) findViewById(R.id.textText);
-        String text = llibre.getStringExtra("text");
+        String text = llibre.getStringExtra("descripcio");
         if(text.length()>250){
             text = text.substring(0, 250);
             text += "...";
