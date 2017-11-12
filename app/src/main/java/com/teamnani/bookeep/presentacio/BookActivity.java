@@ -46,7 +46,8 @@ public class BookActivity extends AppCompatActivity {
         afegir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ctrlPresentacio.ferComentari(getTitle().toString(), "joe", (new Timestamp(System.currentTimeMillis())).toString(), ((RatingBar) findViewById(R.id.ratingText)).getRating(), ((EditText) findViewById(R.id.comentariText)).toString());
+                ctrlPresentacio.ferComentari(getTitle().toString(), "joe", (new Timestamp(System.currentTimeMillis())).toString(), ((RatingBar) findViewById(R.id.ratingText)).getRating(), ((EditText) findViewById(R.id.comentariText)).getText().toString());
+
             }
         });
 

@@ -1,5 +1,7 @@
 package com.teamnani.bookeep.dades;
 
+import android.os.StrictMode;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -42,9 +44,10 @@ public class ConnectMySQL {
         try{
             Connection con = getConnection();
             Statement stmt = con.createStatement();
-            stmt.executeUpdate("insert into Coments values('"+nick+"','"+data+"','"+punt+"','"+com+"')");
-            stmt.executeUpdate("insert into Llibre values('"+titol+"','"+nick+"','"+data+"')");
+            stmt.executeUpdate("insert into coments values('"+nick+"','"+data+"','"+punt+"','"+com+"')");
+            stmt.executeUpdate("insert into llibre values('"+titol+"','"+nick+"','"+data+"')");
             con.close();
+            System.out.println("FUNCIONA");
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -53,6 +56,10 @@ public class ConnectMySQL {
     }
 
     private Connection getConnection() throws ClassNotFoundException, SQLException {
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
         Class.forName("com.mysql.jdbc.Driver");
         return DriverManager.getConnection("jdbc:mysql://lhcp1043.webapps.net:3306/ly1tsanb_bookeep", "ly1tsanb_bookeep", "Bookeep!*");
 
