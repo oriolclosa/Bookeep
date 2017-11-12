@@ -86,6 +86,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
     }
 
     public ArrayList<ArrayList<String>> obtenirBooks(){
+        System.out.println("Hola1");
         return books;
     }
 
