@@ -87,8 +87,8 @@ public class BookActivity extends AppCompatActivity {
 
         TextView llibText = (TextView) findViewById(R.id.textText);
         String text = llibre.getStringExtra("text");
-        if(text.length()>50){
-            text.substring(0, 50);
+        if(text.length()>250){
+            text = text.substring(0, 250);
             text += "...";
         }
         llibText.setText(text);
