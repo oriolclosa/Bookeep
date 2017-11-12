@@ -117,48 +117,6 @@
                 android:text="TextView" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingBottom="0dp"
-                android:paddingLeft="25dp"
-                android:paddingRight="25dp"
-                android:paddingTop="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ADD REVIEW"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <RatingBar
-                    android:id="@+id/ratingText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left|center"
-                    android:isIndicator="false"
-                    android:numStars="5"
-                    android:paddingTop="10dp"
-                    android:rating="2.5"
-                    android:stepSize="0.1" />
-
-                <EditText
-                    android:id="@+id/comentariText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textMultiLine"
-                    android:paddingBottom="10dp" />
-
-                <Button
-                    android:id="@+id/commentButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="SUBMIT" />
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/comentarisArea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -166,7 +124,46 @@
                 android:paddingBottom="20dp"
                 android:paddingLeft="25dp"
                 android:paddingRight="25dp"
-                android:paddingTop="20dp"></LinearLayout>
+                android:paddingTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ADD REVIEW"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <RatingBar
+                        android:id="@+id/ratingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:paddingTop="10dp"
+                        android:rating="2.5"
+                        android:stepSize="0.1" />
+
+                    <EditText
+                        android:id="@+id/comentariText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textMultiLine"
+                        android:paddingBottom="10dp" />
+
+                    <Button
+                        android:id="@+id/commentButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SUBMIT" />
+                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
