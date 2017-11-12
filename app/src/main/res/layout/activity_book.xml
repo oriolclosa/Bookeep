@@ -120,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:paddingBottom="20dp"
+                android:paddingBottom="0dp"
                 android:paddingLeft="25dp"
                 android:paddingRight="25dp"
                 android:paddingTop="20dp">
@@ -157,6 +157,16 @@
                     android:layout_height="wrap_content"
                     android:text="SUBMIT" />
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/comentarisArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="20dp"></LinearLayout>
 
         </LinearLayout>
 

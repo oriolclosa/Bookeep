@@ -2,6 +2,7 @@ package com.teamnani.bookeep.presentacio;
 
 import com.teamnani.bookeep.domini.ControladorDomini;
 import com.teamnani.bookeep.domini.Llibre;
+import com.teamnani.bookeep.domini.Resenya;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -60,5 +61,9 @@ public class ControladorPresentacio {
             ctrlPresentacio = new ControladorPresentacio();
         }
         return ctrlPresentacio;
+    }
+
+    public ArrayList<Resenya> obtenirResenyesLlibre(String titol){
+        return ctrlDomini.obtenirResenyesLlibre(titol);
     }
 }
