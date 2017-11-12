@@ -18,7 +18,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String...strings){
         //System.out.println(NetworkUtils.getBookInfo(strings[0]));
-        String s = NetworkUtils.getBookInfo(strings[0], strings[1], strings[2]);
+        String s = NetworkUtils.getBookInfo(strings[0], strings[1], strings[2],strings[3]);
         try{
             JSONObject jsonObject = new JSONObject(s);
             if(jsonObject.has("items")) {
