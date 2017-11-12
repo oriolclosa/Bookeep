@@ -48,8 +48,14 @@ public class BookActivity extends AppCompatActivity {
             }
         }
         llibAutor.setText(autors);
+
         TextView llibAny = (TextView) findViewById(R.id.anyText);
-        llibAny.setText(llibre.getStringExtra("any"));
+        String any = llibre.getStringExtra("any");
+        if(any.length()>4){
+            any = any.substring(0, 4);
+        }
+        llibAny.setText(any);
+
         TextView llibEditorial = (TextView) findViewById(R.id.editorialText);
         llibEditorial.setText(llibre.getStringExtra("editorial"));
 
