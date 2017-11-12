@@ -157,11 +157,11 @@ public class ControladorDomini {
         ArrayList<Resenya> res = new ArrayList<>();
         ArrayList<ArrayList<String> > r = ctrlDades.obtenirComentarisLlibre(titol);
         for (int i = 0; i < r.size(); ++i) {
+            if (r.get(i).get(0) == null) r.get(i).set(0, "");
             if (r.get(i).get(1) == null) r.get(i).set(1, "");
             if (r.get(i).get(2) == null) r.get(i).set(2, "");
             if (r.get(i).get(3) == null) r.get(i).set(3, "");
-            if (r.get(i).get(4) == null) r.get(i).set(4, "");
-            Resenya re = new Resenya(r.get(i).get(1), r.get(i).get(2),Float.parseFloat(r.get(i).get(3)), r.get(i).get(4));
+            Resenya re = new Resenya(r.get(i).get(0), r.get(i).get(1),Float.parseFloat(r.get(i).get(2)), r.get(i).get(3));
             res.add(re);
         }
         return res;
