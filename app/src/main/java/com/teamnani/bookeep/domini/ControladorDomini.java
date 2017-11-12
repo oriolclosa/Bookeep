@@ -72,7 +72,6 @@ public class ControladorDomini {
         ArrayList<ArrayList<String> > r = ctrlDades.obtenirRevistesMesLlegidesAPI(query);
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
-            System.out.println("Gooooo: " + r.get(i).get(1));
             if (r.get(i).get(1) == null) r.get(i).set(1, "");
             if (r.get(i).get(2) == null) r.get(i).set(2, "");
             if (r.get(i).get(3) == null) r.get(i).set(3, "");

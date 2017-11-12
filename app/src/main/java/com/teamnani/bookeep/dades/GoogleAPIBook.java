@@ -33,6 +33,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                     String publisher = null;
                     String photo = null;
                     String ISBN = null;
+                    String description =null;
                     if (book.has("volumeInfo")) {
                         JSONObject volumeInfo = book.getJSONObject("volumeInfo");
                         if (volumeInfo.has("title")) {
@@ -59,6 +60,9 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                             if (industryIdentifiers.has("ISBN_13"))
                                 ISBN = volumeInfo.getString("ISBN_13");
                         }
+                        if(volumeInfo.has("description")){
+                            description = volumeInfo.getString("description");
+                        }
                     }
 
 
@@ -69,7 +73,7 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                         return;
                     }*/
                     //debuguing
-                    ArrayList<String> atributes = new ArrayList<>(Arrays.asList(title, authors, year, publisher, photo,ISBN));
+                    ArrayList<String> atributes = new ArrayList<>(Arrays.asList(title, authors, year, publisher, photo,ISBN, description));
                     books.add(atributes);
                     System.out.println(books.size());
                 }
@@ -85,3 +89,4 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
     }
 
 }
+/
