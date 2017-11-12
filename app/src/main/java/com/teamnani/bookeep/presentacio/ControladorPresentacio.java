@@ -48,4 +48,8 @@ public class ControladorPresentacio {
     public ArrayList<Llibre> obtenirCercaAutor(String autor){
         return ctrlDomini.obtenirLlibresAutor(autor);
     }
+
+    public void ferComentari(){
+        ctrlDomini.afegirComentari();
+    }
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Environment;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,8 @@ import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -123,10 +126,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             Resources r = getResources();
             float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 25, r.getDisplayMetrics());
-            lp.setMargins(0, 0, (int) px, 0);
+            lp.setMargins(0, 0, (int) px, (int) px);
             actual.setLayoutParams(lp);
             LinearLayout starred4 = new LinearLayout(this);
-            starred4.setOrientation(LinearLayout.HORIZONTAL);
+            starred4.setOrientation(LinearLayout.VERTICAL);
             starred3.addView(actual);
             TextView titolText = new TextView(this);
             titolText.setText(llibresStarred.get(i).obtenirTitol());
@@ -134,7 +137,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             titolText.setTypeface(titolText.getTypeface(), Typeface.BOLD);
             starred4.addView(titolText);
             TextView autorText = new TextView(this);
-            autorText.setText(llibresStarred.get(i).obtenirAutor());
+
+            String autors = llibresStarred.get(i).obtenirAutor();
+            if(autors.length()>4) {
+                autors = autors.substring(2, autors.length()-1);
+                List<String> autors2 = new ArrayList<String>(Arrays.asList(autors.split("\",\"")));
+                autors = "";
+                for(int k=0; k<autors2.size(); ++k){
+                    autors += ", " + autors2.get(k);
+                }
+                if(autors.length()>2) {
+                    autors = autors.substring(2, autors.length() - 1);
+                }
+            }
+            if(autors.equals("")){
+                autorText.setVisibility(View.INVISIBLE);
+            }
+            autorText.setText(autors);
+
             autorText.setTextSize((float) 14);
             starred4.addView(autorText);
             starred4.setGravity(Gravity.RIGHT);
@@ -199,6 +219,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EditText cerca = (EditText) findViewById(R.id.editText);
         String cerca2 = cerca.getText().toString();
         ArrayList<Llibre> llista;
+
+        setTitle("Cerca: " + cerca2);
 
         final Switch cerca3 = (Switch) findViewById(R.id.switchAutor);
         if(cerca3.isChecked()){

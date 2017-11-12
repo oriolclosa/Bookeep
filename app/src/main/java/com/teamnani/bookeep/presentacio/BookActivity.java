@@ -31,6 +31,15 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
+        Button afegir = (Button) findViewById(R.id.commentButton);
+        afegir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ctrlPresentacio.ferComentari(getTitle(), "joe", new Timestamp(System.currentTimeMillis()), (RatingBar) findViewById(R.id.ratingText));
+            }
+        });
+
+
         Intent llibre = getIntent();
 
         setTitle(llibre.getStringExtra("titol"));
@@ -38,8 +47,8 @@ public class BookActivity extends AppCompatActivity {
         TextView llibAutor = (TextView) findViewById(R.id.autorText);
         String autors = llibre.getStringExtra("autor");
         if(autors.length()>4) {
-            autors = autors.substring(2, autors.length()-2);
-            List<String> autors2 = new ArrayList<String>(Arrays.asList(autors.split(",")));
+            autors = autors.substring(2, autors.length()-1);
+            List<String> autors2 = new ArrayList<String>(Arrays.asList(autors.split("\",\"")));
             autors = "";
             for(int i=0; i<autors2.size(); ++i){
                 autors += ", " + autors2.get(i);
