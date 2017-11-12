@@ -21,14 +21,14 @@ public class NetworkUtils {
     private static final String PRINT_TYPE = "printType";
     private static final String ORDER_BY = "orderBy";
 
-    static String getBookInfo(String queryString, String bomag, String relnew){
+    static String getBookInfo(String queryString, String bomag, String relnew, String results){
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
         String bookJSONString = null;
 
             Uri buildUri = Uri.parse(BOOK_BASE_URL).buildUpon()
                     .appendQueryParameter(QUERY_PARM, queryString)
-                    .appendQueryParameter(MAX_RESULTS, "6")
+                    .appendQueryParameter(MAX_RESULTS, results)
                     .appendQueryParameter(PRINT_TYPE, bomag)
                     .appendQueryParameter(ORDER_BY, relnew)
                     .build();

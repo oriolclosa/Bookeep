@@ -15,7 +15,7 @@ public class ControladorDades {
     public ArrayList<ArrayList<String>> obtenirLlibresMesLlegitsAPI(String s){
         GoogleAPIBook api = new GoogleAPIBook();
         try {
-            api.execute(s, "books", "relevance").get();
+            api.execute(s, "books", "relevance","6").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -34,7 +34,7 @@ public class ControladorDades {
     public ArrayList<ArrayList<String>> obtenirRevistesMesLlegidesAPI(String s){
         GoogleAPIBook api = new GoogleAPIBook();
         try {
-            api.execute(s, "magazines", "relevance").get();
+            api.execute(s, "magazines", "relevance", "6").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -53,7 +53,7 @@ public class ControladorDades {
     public ArrayList<ArrayList<String>> obtenirLlibresMesRecentsAPI(String s){
         GoogleAPIBook api = new GoogleAPIBook();
         try {
-            api.execute(s, "books", "newest").get();
+            api.execute(s, "books", "newest","6").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -72,7 +72,7 @@ public class ControladorDades {
     public ArrayList<ArrayList<String>> obtenirRevistesMesRecentsAPI(String s){
         GoogleAPIBook api = new GoogleAPIBook();
         try {
-            api.execute(s, "magazines", "newest").get();
+            api.execute(s, "magazines", "newest","6").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -92,7 +92,7 @@ public class ControladorDades {
         GoogleAPIBook api = new GoogleAPIBook();
         try {
 
-            api.execute("inauthor:"+s, "books", "relevance").get();
+            api.execute("inauthor:"+s, "books", "relevance","20").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -111,7 +111,7 @@ public class ControladorDades {
         GoogleAPIBook api = new GoogleAPIBook();
         try {
 
-            api.execute("intitle:"+s, "books", "relevance").get();
+            api.execute("intitle:"+s, "books", "relevance","20").get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
