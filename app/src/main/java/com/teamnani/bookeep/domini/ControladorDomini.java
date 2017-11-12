@@ -53,7 +53,7 @@ public class ControladorDomini {
     }
 
     public ArrayList<Llibre> obtenirLlibresTitol(String query) {
-        ArrayList<ArrayList<String> > r = ctrlDades.obtenirLlibresTitolAPI(query);
+        ArrayList<ArrayList<String> > r = ctrlDades.llibrePerTitols(query);
         ArrayList<Llibre> ll = new ArrayList<>();
         for (int i = 0; i < r.size(); ++i) {
             if (r.get(i).get(1) == null) r.get(i).set(1, "");
