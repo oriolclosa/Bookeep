@@ -85,12 +85,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private LinearLayout carregarLlibresCercats(ArrayList<Llibre> rebuts){
-        TableLayout starred2 = new TableLayout(this);
+        LinearLayout starred2 = new TableLayout(this);
+        starred2.setOrientation(LinearLayout.VERTICAL);
         ArrayList<Llibre> llibresStarred = rebuts;
-        TableRow starred3 = new TableRow(this);
         for(int i=0; i<llibresStarred.size(); ++i){
             String path = llibresStarred.get(i).obtenirPortada();
             Bitmap imgBitmap = null;
+            System.out.println(path);
             Imatges internet = new Imatges(imgBitmap);
             try {
                 imgBitmap = internet.execute(path).get();
@@ -121,13 +122,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 lp.setMargins(25, 0, 0, 0);
             }
             actual.setLayoutParams(lp);
-            starred3.addView(actual);
-            if(((i+1)%3)==0){
-                starred2.addView(starred3);
-                starred3 = new TableRow(this);
-            }
+            starred2.addView(actual);
         }
-
         return starred2;
     }
 
@@ -186,10 +182,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             llista = ctrlPresentacio.obtenirCercaTitol(cerca2);
         }
 
-        System.out.println(llista.get(0).obtenirTitol());
-
-        LinearLayout cont2 = carregarLlibresCercats(llista);
-        contPar.addView(cont2);
+        contPar.addView(carregarLlibresCercats(llista));
     }
 
     @Override

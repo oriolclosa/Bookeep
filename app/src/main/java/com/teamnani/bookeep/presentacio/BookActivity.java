@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -47,6 +48,9 @@ public class BookActivity extends AppCompatActivity {
                 autors = autors.substring(2, autors.length() - 1);
             }
         }
+        if(autors.equals("")){
+            llibAutor.setVisibility(View.INVISIBLE);
+        }
         llibAutor.setText(autors);
 
         TextView llibAny = (TextView) findViewById(R.id.anyText);
@@ -54,9 +58,15 @@ public class BookActivity extends AppCompatActivity {
         if(any.length()>4){
             any = any.substring(0, 4);
         }
+        if(any.equals("")){
+            llibAny.setVisibility(View.INVISIBLE);
+        }
         llibAny.setText(any);
 
         TextView llibEditorial = (TextView) findViewById(R.id.editorialText);
+        if(llibre.getStringExtra("editorial").equals("")){
+            llibEditorial.setVisibility(View.INVISIBLE);
+        }
         llibEditorial.setText(llibre.getStringExtra("editorial"));
 
 
@@ -77,6 +87,9 @@ public class BookActivity extends AppCompatActivity {
         actual.setPadding(0, 0, 0, 0);
 
         TextView llibISBN = (TextView) findViewById(R.id.isbnText);
+        if(llibre.getStringExtra("ISBN").equals("")){
+            llibISBN.setVisibility(View.INVISIBLE);
+        }
         llibISBN.setText(llibre.getStringExtra("ISBN"));
 
         TextView llibProg = (TextView) findViewById(R.id.progressText);
@@ -90,6 +103,9 @@ public class BookActivity extends AppCompatActivity {
         if(text.length()>250){
             text = text.substring(0, 250);
             text += "...";
+        }
+        if(text.equals("")){
+            llibText.setVisibility(View.INVISIBLE);
         }
         llibText.setText(text);
     }
