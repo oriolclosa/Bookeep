@@ -55,11 +55,12 @@ public class GoogleAPIBook extends AsyncTask<String, Void, String> {
                                 photo = imageLink.getString("smallThumbnail");
                             }
                         }
-                        if (volumeInfo.has("ISBN_13")){
-                            JSONObject industryIdentifiers = volumeInfo.getJSONObject("ISBN_13");
-                            if (industryIdentifiers.has("ISBN_13"))
-                                ISBN = volumeInfo.getString("ISBN_13");
+                        if (volumeInfo.has("industryIdentifiers")){
+                            JSONArray industryIdentifiers = volumeInfo.getJSONArray("industryIdentifiers");
+                            if (industryIdentifiers.getJSONObject(0).has("type"))
+                                ISBN = industryIdentifiers.getJSONObject(0).getString("identifier");
                         }
+                        System.out.println(ISBN);
                         if(volumeInfo.has("description")){
                             description = volumeInfo.getString("description");
                         }
