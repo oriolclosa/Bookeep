@@ -157,5 +157,9 @@ public class ControladorDades {
 
     }
 
+    public void afegirComentari(String titol, String nick, String data, float punt, String com){
+        ConnectMySQL c = new ConnectMySQL();
+        c.setComment(titol, nick, data, punt, com);
+    }
 
 }
